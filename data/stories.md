@@ -47,3 +47,29 @@
 ## story_thankyou
 * thanks
     - utter_noworries
+
+## New Story
+
+* greet
+    - find_facility_types
+* inform{"facility_type":"xubh-q36u"}
+    - slot{"facility_type":"xubh-q36u"}
+    - facility_form
+    - form{"name":"facility_form"}
+    - slot{"facility_type":"xubh-q36u"}
+    - slot{"facility_type":"xubh-q36u"}
+    - slot{"requested_slot":"location"}
+* inform{"location":"San Francisco"}
+    - slot{"location":"San Francisco"}
+    - facility_form
+    - slot{"location":"San Francisco"}
+    - form{"name":null}
+    - slot{"requested_slot":null}
+* inform{"facility_id":"050228"}
+    - slot{"facility_id":"050228"}
+    - find_healthcare_address
+    - slot{"facility_address":"1001 Potrero Avenue, San Francisco, CA 94110"}
+    - utter_address
+    - utter_noworries
+* goodbye
+    - utter_goodbye
