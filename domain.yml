@@ -37,6 +37,7 @@ actions:
 - find_facility_types
 - find_healthcare_address
 - utter_address
+- find_in_pdf
 
 
 responses:

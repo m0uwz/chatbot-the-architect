@@ -8,6 +8,9 @@ from rasa_sdk import Action
 from rasa_sdk.events import SlotSet, FollowupAction
 from rasa_sdk.forms import FormAction
 
+import PyPDF2
+import re
+
 # We use the medicare.gov database to find information about 3 different
 # healthcare facility types, given a city name, zip code or facility ID
 # the identifiers for each facility type is given by the medicare database
@@ -235,5 +238,47 @@ class FacilityForm(FormAction):
 
         # TODO: update rasa core version for configurable `button_type`
         dispatcher.utter_button_message(message, buttons)
+
+        return []
+
+
+class FindInPdf(Action):
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_in_pdf"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict]:
+            
+        # open the pdf file
+        reader = PyPDF2.PdfFileReader("test.pdf")
+
+        writer = PyPDF2.PdfFileWriter()
+
+        # get number of pages
+        numPages = reader.getNumPages()
+
+        # define keyterms
+        Stringi = "CRUD"
+
+        # extract text and do the search
+        for i in range(0, numPages):
+            PageObj = reader.getPage(i)
+            dispatcher.utter_message("this is page " + str(i)) 
+            Texti = PageObj.extractText()
+            # print(Text)
+            ResSearch = re.search(Stringi.lower(), Texti.lower())
+            if ResSearch:
+                writer.addPage(PageObj)
+                with open('outputi.pdf', 'wb') as outfile:
+                    writer.write(outfile)
+                dispatcher.utter_message(Texti)
+            # dispatcher.utter_message(ResSearch)            
+            
+        dispatcher.utter_message("Der Aufruf klappt schon mal... :-)")     
+        dispatcher.utter_message(image="https://i.imgur.com/nGF1K8f.jpg")
 
         return []

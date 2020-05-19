@@ -4,6 +4,7 @@ import re
 
 # open the pdf file
 object = PyPDF2.PdfFileReader("test.pdf")
+writer = PyPDF2.PdfFileWriter()
 
 # get number of pages
 NumPages = object.getNumPages()
@@ -18,4 +19,8 @@ for i in range(0, NumPages):
     Text = PageObj.extractText()
     # print(Text)
     ResSearch = re.search(String.lower(), Text.lower())
-    print(ResSearch)
+    if ResSearch:
+                writer.addPage(PageObj)
+                with open('output.pdf', 'wb') as outfile:
+                    writer.write(outfile)
+                print(ResSearch)

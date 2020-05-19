@@ -42,6 +42,7 @@
 
 ## story_goodbye
 * goodbye
+    - find_in_pdf
     - utter_goodbye
 
 ## story_thankyou
