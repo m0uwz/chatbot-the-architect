@@ -47,7 +47,11 @@
 
 ## story_thankyou
 * thanks
-    - utter_noworries
+    - utter_noworries   
+
+## story_find_course_item
+* ask_course_item
+    - find_in_pdf
 
 ## New Story
 

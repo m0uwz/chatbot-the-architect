@@ -9,11 +9,13 @@ intents:
   - search_provider
   - thanks
   - out_of_scope
+  - ask_course_item
 
 entities:
 - facility_type
 - facility_id
 - location
+- course_item
 
 slots:
   facility_type:
@@ -23,6 +25,8 @@ slots:
   facility_id:
     type: unfeaturized
   location:
+    type: unfeaturized
+  course_item:
     type: unfeaturized
 
 forms:

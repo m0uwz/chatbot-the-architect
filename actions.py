@@ -252,33 +252,45 @@ class FindInPdf(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict]:
+
+        dispatcher.utter_message("Hallo. Der Aufruf klappt schon mal... :-)")  
+
+        found = False
+        courseItem = tracker.get_slot("course_item")   
+        dispatcher.utter_message("I found this slot course item:")
+        dispatcher.utter_message(str(courseItem))
             
         # open the pdf file
+        # reader = PyPDF2.PdfFileReader("/app/actions/test.pdf")
         reader = PyPDF2.PdfFileReader("test.pdf")
-
-        writer = PyPDF2.PdfFileWriter()
-
-        # get number of pages
+        # writer = PyPDF2.PdfFileWriter()
+        
         numPages = reader.getNumPages()
 
-        # define keyterms
-        Stringi = "CRUD"
-
-        # extract text and do the search
         for i in range(0, numPages):
             PageObj = reader.getPage(i)
-            dispatcher.utter_message("this is page " + str(i)) 
-            Texti = PageObj.extractText()
+            # dispatcher.utter_message("this is page " + str(i)) 
+            pdfText = PageObj.extractText()
             # print(Text)
-            ResSearch = re.search(Stringi.lower(), Texti.lower())
-            if ResSearch:
-                writer.addPage(PageObj)
-                with open('outputi.pdf', 'wb') as outfile:
-                    writer.write(outfile)
-                dispatcher.utter_message(Texti)
-            # dispatcher.utter_message(ResSearch)            
+            resSearch = re.search(str(courseItem).lower(), pdfText.lower())
+            if resSearch:
+                # writer.addPage(PageObj)
+                # with open('/app/actions/outputi.pdf', 'wb') as outfile:
+                    # writer.write(outfile)
+                found = True
+                dispatcher.utter_message(pdfText)
+
+        if not found:
+            dispatcher.utter_message("I couldn't find any information about " + str(courseItem))
+
             
         dispatcher.utter_message("Der Aufruf klappt schon mal... :-)")     
         dispatcher.utter_message(image="https://i.imgur.com/nGF1K8f.jpg")
+        dispatcher.utter_message(
+                text=(
+                    f"I did not find any matching issues on our [forum](https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf):\n"
+                    f"I recommend you post your question there."
+                )
+            )
 
         return []

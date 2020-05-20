@@ -90,6 +90,10 @@
 - hello robot
 - hi
 
+## intent:ask_course_item
+- what is [Node.js](course_item)
+- what is [Angular](course_item)
+
 ## intent:inform
 - [Sitka](location)
 - [Juneau](location)
