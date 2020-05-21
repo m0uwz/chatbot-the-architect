@@ -10,6 +10,8 @@ from rasa_sdk.forms import FormAction
 
 import PyPDF2
 import re
+import json
+from difflib import SequenceMatcher
 
 # We use the medicare.gov database to find information about 3 different
 # healthcare facility types, given a city name, zip code or facility ID
@@ -253,12 +255,24 @@ class FindInPdf(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict]:
 
-        dispatcher.utter_message("Hallo. Der Aufruf klappt schon mal... :-)")  
-
         found = False
-        courseItem = tracker.get_slot("course_item")   
+        course_item = tracker.get_slot("course_item")   
         dispatcher.utter_message("I found this slot course item:")
-        dispatcher.utter_message(str(courseItem))
+        dispatcher.utter_message(str(course_item))
+
+        # try to find the course item in knowledge file first
+        with open('course-items.json', 'r') as json_file:
+            data = json.load(json_file)
+            print(data)
+            for slide in data['slides']:
+                for item in slide['course-items']:
+                    course_item_text = str(item['title']).lower()
+                    similarity = SequenceMatcher(None, course_item_text, course_item.lower()).ratio()
+                    print(similarity)
+                    if similarity >= 0.8:
+                        dispatcher.utter_message("I found this from json:")
+                        dispatcher.utter_message(item['description'])
+
             
         # open the pdf file
         # reader = PyPDF2.PdfFileReader("/app/actions/test.pdf")
@@ -272,7 +286,7 @@ class FindInPdf(Action):
             # dispatcher.utter_message("this is page " + str(i)) 
             pdfText = PageObj.extractText()
             # print(Text)
-            resSearch = re.search(str(courseItem).lower(), pdfText.lower())
+            resSearch = re.search(str(course_item).lower(), pdfText.lower())
             if resSearch:
                 # writer.addPage(PageObj)
                 # with open('/app/actions/outputi.pdf', 'wb') as outfile:
@@ -281,7 +295,7 @@ class FindInPdf(Action):
                 dispatcher.utter_message(pdfText)
 
         if not found:
-            dispatcher.utter_message("I couldn't find any information about " + str(courseItem))
+            dispatcher.utter_message("I couldn't find any information about " + str(course_item))
 
             
         dispatcher.utter_message("Der Aufruf klappt schon mal... :-)")     

@@ -1,0 +1,93 @@
+{
+	"slides": [{
+		"no": 2,
+		"topic": "Introduction to Software Architectures and Architectural Integration",
+		"course-items": [{
+			"title": "System design",
+			"description": "System design is the process of defining the architecture, modules, interfaces, and data for a system to satisfy specified requirements.",
+			"link": "https://en.wikipedia.org/wiki/Systems_design",
+			"picture": "none"
+		}, {
+			"title": "Unit testing",
+			"description": "In computer programming, unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules together with associated control data, usage procedures, and operating procedures, are tested to determine whether they are fit for use.",
+			"link": "https://en.wikipedia.org/wiki/Unit_testing",
+			"picture": "none"
+		}, {
+			"title": "Integration architecture",
+			"description": "There are multiple definitions for Integration architecture but here's one by Professor Alda: An integration architecture defines **global design decisions** for the integration of potentially *distributed* and *heterogeneous* software components. An integration architecture also makes **implications for tools and frameworks** for developing, testing, andmaintaining *interoperable* software.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Architectural styles",
+			"description": "Software architecture styles define rules and assumptions for a type (template, class) of software architectures. That means, that the concrete  implementation of a software architecture of a software is an instance of a software architecture style. Here I have an example of the Layer pattern for you:",
+			"link": "none",
+			"picture": "http://www.ruanyifeng.com/blogimg/asset/2016/bg2016090302.png"
+		}, {
+			"title": "Architectural patterns",
+			"description": "Software architecture styles define rules and assumptions for a type (template, class) of software architectures. That means, that the concrete  implementation of a software architecture of a software is an instance of a software architecture style. Here I have an example of the Layer pattern for you:",
+			"link": "none",
+			"picture": "http://www.ruanyifeng.com/blogimg/asset/2016/bg2016090302.png"
+		}, {
+			"title": "Software Architecture",
+			"description": "A software architecture describes the decomposition of a software system that follows the specifications of pertaining architectural styles. The description of a software architecture comprises the following constituting elements: The fundamental **architecture elements** and their **interfaces**, the **interaction relationships** among those architecture elements as well as the **architecture directives**, and the characteristic **factors describing the economic value** of the whole software architecture.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Architecture elements",
+			"description": "The architecture elements describe atomic units (e.g. classes, modules) and complex units (e.g. subsystems, packages) of a software architecture.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Interaction relationships",
+			"description": "Architecture elements have to interact with each other. The easiest way is probably the local interaction via a local method call. But there are also more advanced models like the Observer Pattern.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Non-blocking asynchronous interaction",
+			"description": "Non-blocking or asynchronous interaction: The sender is not blocked, may receive or initiate further requests; stays responsive. Notification e.g., by a callback function.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Blocking synchronous interaction",
+			"description": "Blocking or synchronous interaction: The sender remains blocked, has to await the answer (response).",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Conway's law",
+			"description": "Conway's Law says: 'Organizations which design systems [...] are constrained to produce designs which are copies of the communication structures of these organizations.' Let's interpret that: The software architecture of a system is influenced by formal and informal organizational structures.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Architecture directives",
+			"description": "Architecture Directives are additional properties, rules, and restrictions on a software architecture that cannot be directly inferred by the decomposition of the software, for instance quality control or design of security aspects.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Economic value",
+			"description": "Characteristic factors for describing the economic value are usually identified on a business level, but are evaluated on an architectural level at runtime. Examples: SLA (contractual agreement between client und provider) and KPI (functional measurements that can be extracted during runtime).",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "SLA",
+			"description": "Characteristic factors for describing the economic value are usually identified on a business level, but are evaluated on an architectural level at runtime. Examples: SLA (contractual agreement between client und provider) and KPI (functional measurements that can be extracted during runtime).",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "KPI",
+			"description": "Characteristic factors for describing the economic value are usually identified on a business level, but are evaluated on an architectural level at runtime. Examples: SLA (contractual agreement between client und provider) and KPI (functional measurements that can be extracted during runtime).",
+			"link": "none",
+			"picture": "none"
+		}]
+	}],
+	"exercises": [{
+		"no": 1,
+		"subtasks": [{
+				"no": 2,
+				"course-items": [{
+					"title": "hiufhfh",
+					"description": "hfhfjhu"
+				}]
+			}
+		]
+	}]
+}

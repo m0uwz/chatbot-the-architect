@@ -93,6 +93,21 @@
 ## intent:ask_course_item
 - what is [Node.js](course_item)
 - what is [Angular](course_item)
+- tell me something about [System design](course_item)
+- please explain [Unit testing](course_item) to me
+- what is an [Integration architecture](course_item)
+- [Architectural styles](course_item)
+- how to use [Architectural patterns](course_item)
+- I need to know about [Software architecture](course_item)
+- I want to learn more about [Architecture elements](course_item)
+- can someone help me with infos about [Interaction relationships](course_item)
+- what are [Non-blocking asynchronous interactions](course_item)
+- tell me what are [Synchronous interactions](course_item)
+- what's [Conway's Law](course_item)
+- which [Architecture directives](course_item) do exist
+- I want information about the [Economic value](course_item)
+- what do I need [SLA](course_item) for
+- whats [KPI](course_item)
 
 ## intent:inform
 - [Sitka](location)
@@ -308,3 +323,6 @@
 
 ## regex:location
 - [0-9]{5}
+
+## intent:get_started
+- get_started

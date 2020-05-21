@@ -78,3 +78,17 @@
     - utter_noworries
 * goodbye
     - utter_goodbye
+
+## story_initial
+* get_started
+    - utter_greet
+    - utter_ask_help_type
+
+
+## story_general_question
+* general_question
+    - utter_goodbye
+
+## story_exercise_help
+* exercise_help
+    - utter_noworries    

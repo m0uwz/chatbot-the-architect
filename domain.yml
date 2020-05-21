@@ -10,6 +10,9 @@ intents:
   - thanks
   - out_of_scope
   - ask_course_item
+  - general_question
+  - exercise_help
+  - get_started
 
 entities:
 - facility_type
@@ -70,3 +73,11 @@ responses:
 
   utter_address:
   - text: "The address is {facility_address}."
+
+  utter_ask_help_type:
+  - buttons:
+    - payload: /general_question
+      title: General question
+    - payload: /exercise_help
+      title: Help with an exercise
+    text: How can I help you?
