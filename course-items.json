@@ -77,10 +77,160 @@
 			"description": "Characteristic factors for describing the economic value are usually identified on a business level, but are evaluated on an architectural level at runtime. Examples: SLA (contractual agreement between client und provider) and KPI (functional measurements that can be extracted during runtime).",
 			"link": "none",
 			"picture": "none"
+		}, {
+			"title": "Legacy system",
+			"description": "A legacy system is an old computer system or application program, which is still in use. Often referencing a system as legacy means that it paved the way for the standards that would follow it. This can also imply that the system is out of date or in need of replacement.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "API",
+			"description": "An application programming interface (API) is a computing interface which defines interactions between multiple software intermediaries. It defines the kinds of calls or requests that can be made, how to make them, the data formats that should be used, the conventions to follow, etc.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Monolithic architecture",
+			"description": "There is no separation of application logic, data storage, and user interface (e.g., Mainframe-Batch programs).",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Data transfer",
+			"description": "Data transfer is a basic concept of integration: An application writes into a file, while another application reads from the same after a while.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Shared database",
+			"description": "The shared database is a basic concept of integration: Various systems use a global databasefor sharing data.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Methods calls",
+			"description": "Method calls are a basic concept of integration: A system provides an API that can be accessed by Remote Procedure Calls (RPC) in a synchronous way.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Messaging",
+			"description": "Messaging is a basic concept of integration: A system sends messages to common message channel in an asynchronousway. Receiver component can read the message later on.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Point-to-Point",
+			"description": "Point-to-Point is a basic integration pattern: There is a direct connection of the corresponding interfaces.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Hub and Spoke",
+			"description": "Hub and Spoke is a basic integration pattern: All systems were integrated from a single location, the hub. The state is maintained in a shared database and there is only a single point of integration and transformation.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Bus",
+			"description": "A Bus is a basic integration pattern: Adapters are used for transformation. There is no state maintained and add-on services such as routing required.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "4 Views Model",
+			"description": "The 4 Views Model includes the modelling of the environment of the system under development, indicating the most relevant dependencies. It consists of four views: **Context view**, **runtime view**, **module view** and **distribution view**.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Module view",
+			"description": "The Module View is part of the **4 Views Model** and it models static structures of the architecture elements of the system, subsystems, components, classes and their interfaces. It represents the dependencies among these elements. For representation, **UML Component Diagrams**, **UML Package Diagrams** and **UML Class Diagrams** were used.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Runtime View",
+			"description": "The Runtime View is part of the **4 Views Model** and describes, which architecture elements (classes, objects, subsystems, components,…) of a systems do exist at runtime and how they interact together (dynamic perspective). Actors can also be included, too. For representation, **UML Sequence Diagrams** were used.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Context View",
+			"description": "The Context View is part of the **4 Views Model** and models the environment of the system under development, indicating the most relevant dependencies. It is the abstract modelling of the system as a black box to the neighboring system (no internal structure is to be revealed). For representation, **UML Package Diagrams** were used.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Distribution View",
+			"description": "The Distribution View is part of the **4 Views Model** and it describes the runtime environments of the system in terms of hardware devices (e.g., server network, firewalls) and the corresponding protocolls. It also represents the  execution environments (e.g., application server, container). For representation, **UML Distribution Diagrams** were used.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "UML Component Diagram",
+			"description": "An UML Component Diagram represents the architecture elements (subsystems, components) of a system as organized during runtime. The interfaces were modelled explicitly (required and provided) and the components were modelled as white boxes with dedicated connections from internal implementations to external interfaces. The UML Component Diagram is used for the **Module View** of the **4 Views Model**.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "UML Package Diagram",
+			"description": "Package Diagrams show an overview of the decomposition of the complete system in packages and subsystems. They were used for the **Context View** and the **Module View** of the **4 Views Model**.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "UML Distribution Diagram",
+			"description": "An UML Distribution Diagram represents the hardware topology as well as the distribution of the software to the hardware. It is used for the **Distribution View** of the **4 Views Model**.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "UML Sequence Diagram",
+			"description": "A sequence diagram shows object interactions arranged in time sequence. It depicts the objects and classes involved in the scenario and the sequence of messages exchanged between the objects needed to carry out the functionality of the scenario. It is used for the **Runtime View** of the **4 Views Model**.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "UML Class Diagram",
+			"description": "A Class Diagram is a type of static structure diagram that describes the structure of a system by showing the system's classes, their attributes, operations (or methods), and the relationships among objects. It is used for the **Module View** of the **4 Views Model**.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "Layer Pattern",
+			"description": "The Layer Pattern is the decomposition of system functionality in single layers: Presentation Layer, Application Layer, Domain Layer and Infrastructure Layer.  Each layer implements a coherent functionality block on a given abstraction level and provides services for the lower layers (or same level). Each layer can be developed, deployed, and maintained independently.",
+			"link": "none",
+			"picture": "none"
+		}, {
+			"title": "",
+			"description": "",
+			"link": "none",
+			"picture": "none"
 		}]
 	}],
 	"exercises": [{
 		"no": 1,
+		"subtasks": [{
+				"no": 2,
+				"course-items": [{
+					"title": "hiufhfh",
+					"description": "hfhfjhu"
+				}]
+			}
+		]
+	}, {
+		"no": 2,
+		"subtasks": [{
+				"no": 2,
+				"course-items": [{
+					"title": "hiufhfh",
+					"description": "hfhfjhu"
+				}]
+			}
+		]
+	}, {
+		"no": 3,
+		"subtasks": [{
+				"no": 2,
+				"course-items": [{
+					"title": "hiufhfh",
+					"description": "hfhfjhu"
+				}]
+			}
+		]
+	}, {
+		"no": 4,
+		"subtasks": [{
+				"no": 2,
+				"course-items": [{
+					"title": "hiufhfh",
+					"description": "hfhfjhu"
+				}]
+			}
+		]
+	}, {
+		"no": 5,
 		"subtasks": [{
 				"no": 2,
 				"course-items": [{

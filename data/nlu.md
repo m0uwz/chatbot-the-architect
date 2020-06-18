@@ -199,6 +199,17 @@
 - a [home health agency](facility_type)
 - a [hospital](facility_type)
 - a [nursing home](facility_type)
+- [1](exercise_no)
+- [2](exercise_no)
+- [3](exercise_no)
+- [4](exercise_no)
+- [5](exercise_no)
+- [1](subtask_no)
+- [2](subtask_no)
+- [3](subtask_no)
+- [4](subtask_no)
+- [5](subtask_no)
+
 
 ## intent:search_provider
 - i need a [hospital](facility_type)

@@ -91,4 +91,11 @@
 
 ## story_exercise_help
 * exercise_help
-    - utter_noworries    
+    - find_exercise_nos   
+* inform{"exercise_no":"1"}    
+    - slot{"exercise_no":"1"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}    
+    - utter_ask_question
+* ask_course_item     

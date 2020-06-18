@@ -19,6 +19,8 @@ entities:
 - facility_id
 - location
 - course_item
+- exercise_no
+- subtask_no
 
 slots:
   facility_type:
@@ -30,6 +32,10 @@ slots:
   location:
     type: unfeaturized
   course_item:
+    type: unfeaturized
+  exercise_no:
+    type: unfeaturized  
+  subtask_no:
     type: unfeaturized
 
 forms:
@@ -45,6 +51,10 @@ actions:
 - find_healthcare_address
 - utter_address
 - find_in_pdf
+- find_exercise_nos
+- find_subtask_nos
+- utter_ask_help_typ
+- utter_ask_question
 
 
 responses:
@@ -81,3 +91,8 @@ responses:
     - payload: /exercise_help
       title: Help with an exercise
     text: How can I help you?
+
+  utter_ask_question:
+  - text: "Feel free to ask me a question!"   
+  - text: "What question can I help you with?" 
+  - text: "How can I help you?"

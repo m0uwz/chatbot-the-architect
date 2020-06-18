@@ -12,6 +12,10 @@ import PyPDF2
 import re
 import json
 from difflib import SequenceMatcher
+import psycopg2 
+
+import database
+
 
 # We use the medicare.gov database to find information about 3 different
 # healthcare facility types, given a city name, zip code or facility ID
@@ -243,6 +247,66 @@ class FacilityForm(FormAction):
 
         return []
 
+class FindExerciseNos(Action):
+    """This action class allows to display buttons for each facility type
+    for the user to chose from to fill the facility_type entity slot."""
+
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_exercise_nos"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List:
+
+        db = database.Database()
+        exercises = db.get_exercises()
+
+        buttons = []
+        for exercise in exercises:
+            exercise_no = str(exercise.exercise_no)
+            payload = "/inform{\"exercise_no\": \"" + exercise_no + "\"}"
+            buttons.append(
+                {"title": "{}".format(exercise_no),
+                 "payload": payload})
+
+
+        dispatcher.utter_button_message("What exercise are you currently working on?", buttons)  
+        return []   
+
+class FindSubtaskNos(Action):
+    """This action class retrieves the address of the user's
+    healthcare facility choice to display it to the user."""
+
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_subtask_nos"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict]:
+
+        exercise_no = tracker.get_slot("exercise_no")    
+
+        db = database.Database()
+        subtasks = db.get_subtasks_by_exercise_no(exercise_no)
+
+        buttons = []
+        for subtask in subtasks:
+            subtask_no = str(subtask.subtask_no)
+            payload = "/inform{\"subtask_no\": \"" + subtask_no + "\"}"
+            buttons.append(
+                {"title": "{}".format(subtask_no),
+                "payload": payload})
+
+        dispatcher.utter_message("Okay, you are working on exercise " + exercise_no + ".")
+        dispatcher.utter_button_message("What subtask can I help you with?", buttons)  
+        return []          
+
 
 class FindInPdf(Action):
     def name(self) -> Text:
@@ -254,6 +318,10 @@ class FindInPdf(Action):
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict]:
+
+        exercise_no = tracker.get_slot("exercise_no")    
+        subtask_no = tracker.get_slot("subtask_no")    
+
 
         found = False
         course_item = tracker.get_slot("course_item")   
