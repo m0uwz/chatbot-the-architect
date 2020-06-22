@@ -7,6 +7,8 @@ import sqlalchemy.dialects.postgresql as sql
 
 
 eng = create_engine("postgresql+psycopg2://postgres:admin@/chatbot")
+# eng = create_engine("postgresql+psycopg2://admin:admin@chatbot-db/")
+
 
 Base = declarative_base()
 
@@ -280,7 +282,7 @@ list_course_items = [
         CourseItem(
             id = 28,
             title = 'Runtime View',
-            description = 'The Runtime View is part of the **4 Views Model** and describes, which architecture elements (classes, objects, subsystems, components,…) of a systems do exist at runtime and how they interact together (dynamic perspective). Actors can also be included, too. For representation, **UML Sequence Diagrams** were used.',
+            description = 'The Runtime View is part of the **4 Views Model** and describes, which architecture elements (classes, objects, subsystems, components,...) of a systems do exist at runtime and how they interact together (dynamic perspective). Actors can also be included, too. For representation, **UML Sequence Diagrams** were used.',
             how_to = None,
             link = None,
             image_id = None),
@@ -379,7 +381,7 @@ session.add_all(
         Lecture(
             id = 7,
             chapter = 5,
-            title = 'Message-Oriented Middleware (MOM) –StateOf-The-Art solutions',
+            title = 'Message-Oriented Middleware (MOM) -StateOf-The-Art solutions',
             file_id = None) 
     ]
 )
