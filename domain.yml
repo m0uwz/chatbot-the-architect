@@ -13,6 +13,8 @@ intents:
   - general_question
   - exercise_help
   - get_started
+  - helpful
+  - not_helpful
 
 entities:
 - facility_type
@@ -37,6 +39,8 @@ slots:
     type: unfeaturized  
   subtask_no:
     type: unfeaturized
+  course_item_found:
+    type: bool   
 
 forms:
 - facility_form
@@ -51,38 +55,45 @@ actions:
 - find_healthcare_address
 - utter_address
 - find_in_pdf
+- find_in_db
 - find_exercise_nos
 - find_subtask_nos
 - utter_ask_help_typ
 - utter_ask_question
-
+- utter_ask_helpfulness
+- utter_joy
+- utter_further_question
+- utter_no_help_needed
+- utter_rephrase_question
+- utter_send_contact_details  
+ 
 
 responses:
   utter_greet:
-  - text: "Hi. What are you looking for?"
-  - text: "Hey there! Please choose one of the healthcare facility options:"
-  - text: "Hello! What can I help you find today?"
+  - text: Hi. What are you looking for?
+  - text: Hey there! Please choose one of the healthcare facility options
+  - text: Hello! What can I help you find today?
 
   utter_goodbye:
-  - text: "Talk to you later!"
-  - text: "Have a good day."
-  - text: "Until next time!"
+  - text: Talk to you later!
+  - text: Have a good day.
+  - text: Until next time!
 
   utter_noworries:
-  - text: "My pleasure."
-  - text: "You are welcome!"
+  - text: My pleasure.
+  - text: You are welcome!
 
   utter_ask_facility_type:
   - text: "Choose one of the following to search for: hospital, nursing home, or home health agency."
 
   utter_ask_location:
-  - text: "Please provide your city name."
-  - text: "What is your current city?"
-  - text: "Please provide your city name or zip code."
-  - text: "Please enter your zip code or city name to find local providers."
+  - text: Please provide your city name.
+  - text: What is your current city?
+  - text: Please provide your city name or zip code.
+  - text: Please enter your zip code or city name to find local providers.
 
   utter_address:
-  - text: "The address is {facility_address}."
+  - text: The address is {facility_address}.
 
   utter_ask_help_type:
   - buttons:
@@ -92,7 +103,40 @@ responses:
       title: Help with an exercise
     text: How can I help you?
 
+  utter_ask_helpfulness:
+  - buttons:
+    - payload: /helpful
+      title: Thumbs up 
+    - payload: /not_helpful
+      title: Thumbs down    
+    text: Did that help you? 
+
+  utter_joy:
+    - text: That pleases me!
+    - text: I am glad that I could help you.  
+    - text: I love to be helpful!
+
+  utter_further_question:
+    - text: Do you have another question?
+    - text: Do you want to ask me anything else?
+
+  utter_no_help_needed:
+    - text: All right. I am available to you at any time.
+    - text: OK. I look forward to helping you again next time.
+    - text: Okay. I look forward to talking to you again soon.
+
   utter_ask_question:
-  - text: "Feel free to ask me a question!"   
-  - text: "What question can I help you with?" 
-  - text: "How can I help you?"
+  - text: Feel free to ask me a question! 
+  - text: What question can I help you with? 
+  - text: How can I help you?
+
+  utter_rephrase_question:
+  - text: Could you please rephrase your request? I may not have understood your request correctly.
+  - text: Can you express your request in other words? Maybe I didn't understand you correctly.
+
+  utter_can_not_help:
+  - text: Unfortunately I can't help you with that. I'm sorry.
+  - text: I don't know anything about that. Unfortunately I can't help you, sorry.
+
+  utter_send_contact_details:
+  - text: "If you want, you can contact the professor directly by email: sascha.alda@h-brs.de"

@@ -376,3 +376,39 @@ class FindInPdf(Action):
             )
 
         return []
+
+
+class FindInDb(Action):
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "find_in_db"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict]:
+
+        exercise_no = tracker.get_slot("exercise_no")    
+        subtask_no = tracker.get_slot("subtask_no")    
+
+
+        found = False
+        course_item = tracker.get_slot("course_item")   
+        dispatcher.utter_message("I found this slot course item:")
+        dispatcher.utter_message(str(course_item))
+
+        db = database.Database()
+        course_items = db.get_course_items()
+
+        for item in course_items:
+            title = item.title
+            similarity = SequenceMatcher(None, title, course_item.lower()).ratio()
+            if similarity >= 0.8:
+                found = True
+                dispatcher.utter_message(item.description)
+        
+        if not found:
+            dispatcher.utter_message("I couldn't find any information about " + str(course_item))
+
+        return [SlotSet("course_item_found", found)]

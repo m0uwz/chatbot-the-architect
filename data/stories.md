@@ -85,9 +85,58 @@
     - utter_ask_help_type
 
 
-## story_general_question
+## story_general_question_helpful
 * general_question
+    - utter_ask_question
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": true}
+    - utter_ask_helpfulness
+* helpful
+    - utter_joy
+    - utter_further_question
+* deny
+    - utter_no_help_needed
+* goodbye
     - utter_goodbye
+
+## story_general_question_course_item_not_found_in_db_but_pdf
+* general_question
+    - utter_ask_question
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": false}
+    - find_in_pdf
+    - utter_ask_helpfulness
+* helpful
+    - utter_joy
+    - utter_further_question
+* deny
+    - utter_no_help_needed
+* goodbye
+    - utter_goodbye
+
+## story_general_question_not_helpful
+* general_question
+    - utter_ask_question
+* ask_course_item
+    - find_in_db
+    - utter_ask_helpfulness
+* not_helpful
+    - find_in_pdf
+    - utter_ask_helpfulness
+* not_helpful
+    - utter_rephrase_question
+* ask_course_item
+    - find_in_pdf
+    - utter_ask_helpfulness
+* not_helpful
+    - utter_can_not_help
+    - utter_send_contact_details
+* thanks
+    - utter_noworries            
+* goodbye
+    - utter_goodbye                           
 
 ## story_exercise_help
 * exercise_help
