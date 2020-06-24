@@ -21,6 +21,9 @@ class SubtaskHasCourseItem(Base):
     __tablename__ = 'subtask_has_course_item'
     subtask_id = Column('subtask_id', Integer, ForeignKey('subtask.id'), primary_key=True)
     course_item_id = Column('course_item_id', Integer, ForeignKey('course_item.id'), primary_key=True)
+    how_to_exercise_specific = Column(String)
+    course_item = relationship("CourseItem", back_populates="subtasks")
+    subtask = relationship("Subtask", back_populates="course_items")
 
 class File(Base):
     __tablename__ = "file"
@@ -42,6 +45,7 @@ class CourseItem(Base):
                         uselist=True,
                         cascade='delete,all',
                         passive_deletes=True))
+    subtasks = relationship("SubtaskHasCourseItem", back_populates="course_item")                    
 
 class Lecture(Base):
     __tablename__ = "lecture"
@@ -76,10 +80,8 @@ class Subtask(Base):
         backref=backref("subtasks",
                         uselist=True,
                         cascade='delete,all'))
-    course_items = relationship(
-        "CourseItem",
-        secondary='subtask_has_course_item',
-        backref="subtasks")
+    course_items = relationship("SubtaskHasCourseItem", back_populates="subtask")
+    
 
 Base.metadata.bind = eng      
 Base.metadata.drop_all()
@@ -502,11 +504,12 @@ session.add_all(
     [
         SubtaskHasCourseItem(
             subtask_id = 1,
-            course_item_id = 1),
+            course_item_id = 1,
+            how_to_exercise_specific = "mach dies, mach das"),
         SubtaskHasCourseItem(
             subtask_id = 1,
-            course_item_id = 2
-        )
+            course_item_id = 2,
+            how_to_exercise_specific = "just do it")
     ]
 )
 
