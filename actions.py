@@ -13,8 +13,11 @@ import re
 import json
 from difflib import SequenceMatcher
 import psycopg2 
+import random
 
-import database
+# TOCHANGE
+from database import Database
+# from .database import Database
 
 
 # We use the medicare.gov database to find information about 3 different
@@ -261,7 +264,7 @@ class FindExerciseNos(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List:
 
-        db = database.Database()
+        db = Database()
         exercises = db.get_exercises()
 
         buttons = []
@@ -292,7 +295,7 @@ class FindSubtaskNos(Action):
 
         exercise_no = tracker.get_slot("exercise_no")    
 
-        db = database.Database()
+        db = Database()
         subtasks = db.get_subtasks_by_exercise_no(exercise_no)
 
         buttons = []
@@ -306,6 +309,46 @@ class FindSubtaskNos(Action):
         dispatcher.utter_message("Okay, you are working on exercise " + exercise_no + ".")
         dispatcher.utter_button_message("What subtask can I help you with?", buttons)  
         return []          
+
+
+class SuggestCourseItems(Action):
+    """This action class retrieves the address of the user's
+    healthcare facility choice to display it to the user."""
+
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "suggest_course_items"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict]:
+
+        found = False
+
+        exercise_no = tracker.get_slot("exercise_no")  
+        subtask_no = tracker.get_slot("subtask_no")  
+
+        db = Database()
+        course_items = db.get_course_items_by_subtask(exercise_no, subtask_no)
+
+        k = 3 if len(course_items) > 3 else len(course_items)
+        random_items = random.sample(course_items, k)
+
+        buttons = []
+        for item in random_items:
+            found = True
+            payload = "/ask_course_item{\"course_item\": \"" + item.title + "\"}"
+            #payload = "/inform{\"subtask_no\": \"" + subtask_no + "\"}"
+            buttons.append(
+                {"title": "{}".format(item.title),
+                "payload": payload})
+
+        if found:
+            dispatcher.utter_button_message("Can I help you with one of these topics? Otherwise you can also ask me a question directly!", buttons)  
+
+        return [SlotSet("course_item_found", found)]  
 
 
 class FindInPdf(Action):
@@ -328,21 +371,8 @@ class FindInPdf(Action):
         dispatcher.utter_message("I found this slot course item:")
         dispatcher.utter_message(str(course_item))
 
-        # try to find the course item in knowledge file first
-        with open('course-items.json', 'r') as json_file:
-            data = json.load(json_file)
-            print(data)
-            for slide in data['slides']:
-                for item in slide['course-items']:
-                    course_item_text = str(item['title']).lower()
-                    similarity = SequenceMatcher(None, course_item_text, course_item.lower()).ratio()
-                    print(similarity)
-                    if similarity >= 0.8:
-                        dispatcher.utter_message("I found this from json:")
-                        dispatcher.utter_message(item['description'])
-
-            
-        # open the pdf file
+                   
+        # TOCHANGE
         # reader = PyPDF2.PdfFileReader("/app/actions/test.pdf")
         reader = PyPDF2.PdfFileReader("test.pdf")
         # writer = PyPDF2.PdfFileWriter()
@@ -361,11 +391,7 @@ class FindInPdf(Action):
                     # writer.write(outfile)
                 found = True
                 dispatcher.utter_message(pdfText)
-
-        if not found:
-            dispatcher.utter_message("I couldn't find any information about " + str(course_item))
-
-            
+           
         dispatcher.utter_message("Der Aufruf klappt schon mal... :-)")     
         dispatcher.utter_message(image="https://i.imgur.com/nGF1K8f.jpg")
         dispatcher.utter_message(
@@ -375,7 +401,7 @@ class FindInPdf(Action):
                 )
             )
 
-        return []
+        return [SlotSet("course_item_found", found)]
 
 
 class FindInDb(Action):
@@ -398,17 +424,14 @@ class FindInDb(Action):
         dispatcher.utter_message("I found this slot course item:")
         dispatcher.utter_message(str(course_item))
 
-        db = database.Database()
+        db = Database()
         course_items = db.get_course_items()
 
         for item in course_items:
             title = item.title
-            similarity = SequenceMatcher(None, title, course_item.lower()).ratio()
+            similarity = SequenceMatcher(None, title.lower(), course_item.lower()).ratio()
             if similarity >= 0.8:
                 found = True
                 dispatcher.utter_message(item.description)
-        
-        if not found:
-            dispatcher.utter_message("I couldn't find any information about " + str(course_item))
 
         return [SlotSet("course_item_found", found)]

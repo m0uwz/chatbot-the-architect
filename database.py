@@ -1,10 +1,14 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+# TOCHANGE
 from database_model import Exercise, Subtask, Lecture, CourseItem
+# from .database_model import Exercise, Subtask, Lecture, CourseItem
 
 class Database():
     def __init__(self):
+        # TOCHANGE
         self.eng = create_engine("postgresql+psycopg2://postgres:admin@/chatbot")
+        # self.eng = create_engine("postgresql+psycopg2://admin:admin@chatbot-db/")
 
     def _open_session(self):
         DBSession = sessionmaker(bind=self.eng)
@@ -34,4 +38,13 @@ class Database():
         session = self._open_session()
         course_items = session.query(CourseItem)
         session.close()
-        return course_items    
+        return course_items
+
+    def get_course_items_by_subtask(self, exercise_no, subtask_no):
+        session = self._open_session()
+        exercise = session.query(Exercise).filter(Exercise.exercise_no == exercise_no).first()
+        subtask = session.query(Subtask).filter(Subtask.exercise_id == exercise.id).filter(Subtask.subtask_no == subtask_no).first()
+        course_items = subtask.course_items
+        print(course_items)
+        session.close()
+        return course_items

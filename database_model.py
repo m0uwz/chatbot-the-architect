@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, Table
 from sqlalchemy.orm import sessionmaker, relationship, backref
 import sqlalchemy.dialects.postgresql as sql
 
-
+# TOCHANGE
 eng = create_engine("postgresql+psycopg2://postgres:admin@/chatbot")
 # eng = create_engine("postgresql+psycopg2://admin:admin@chatbot-db/")
 
@@ -341,7 +341,15 @@ list_course_items = [
             description = 'The Layer Pattern is the decomposition of system functionality in single layers: Presentation Layer, Application Layer, Domain Layer and Infrastructure Layer.  Each layer implements a coherent functionality block on a given abstraction level and provides services for the lower layers (or same level). Each layer can be developed, deployed, and maintained independently.',
             how_to = None,
             link = None,
-            image_id = None)
+            image_id = None),
+        CourseItem(
+            id = 37,
+            title = 'REST-based API',
+            description = 'REST stands for REpresentational State Transfer, API for Application Programming Interface. This means a programming interface that is based on the paradigms and behavior of the World Wide Web (WWW) and describes an approach for communication between client and server in networks.',
+            how_to = None,
+            link = None,
+            image_id = None
+        )
     ]
 session.add_all(list_course_items)
 

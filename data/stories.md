@@ -92,7 +92,7 @@
     - find_in_db
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
-* helpful
+* affirm
     - utter_joy
     - utter_further_question
 * deny
@@ -107,8 +107,9 @@
     - find_in_db
     - slot{"course_item_found": false}
     - find_in_pdf
+    - slot{"course_item_found": true}
     - utter_ask_helpfulness
-* helpful
+* affirm
     - utter_joy
     - utter_further_question
 * deny
@@ -121,30 +122,176 @@
     - utter_ask_question
 * ask_course_item
     - find_in_db
+    - slot{"course_item_found": true}
     - utter_ask_helpfulness
-* not_helpful
+* deny
     - find_in_pdf
+    - slot{"course_item_found": true}
     - utter_ask_helpfulness
-* not_helpful
+* deny
     - utter_rephrase_question
 * ask_course_item
     - find_in_pdf
+    - slot{"course_item_found": true}
     - utter_ask_helpfulness
-* not_helpful
+* deny
     - utter_can_not_help
     - utter_send_contact_details
 * thanks
     - utter_noworries            
 * goodbye
-    - utter_goodbye                           
+    - utter_goodbye
 
-## story_exercise_help
+
+## story_general_question_course_item_not_found
+* general_question
+    - utter_ask_question
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": false}
+    - find_in_pdf
+    - slot{"course_item_found": false}
+    - utter_can_not_help
+    - utter_send_contact_details
+* thanks
+    - utter_noworries            
+* goodbye
+    - utter_goodbye
+
+## story_exercise_help_with_suggestions
 * exercise_help
     - find_exercise_nos   
 * inform{"exercise_no":"1"}    
     - slot{"exercise_no":"1"}
     - find_subtask_nos
 * inform{"subtask_no":"1"}
-    - slot{"subtask_no":"1"}    
-    - utter_ask_question
-* ask_course_item     
+    - slot{"subtask_no":"1"}
+    - suggest_course_items
+    - slot{"course_item_found": true}    
+* ask_course_item{"course_item":"System design"}
+    - find_in_db
+    - slot{"course_item_found": true}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+* deny
+    - utter_no_help_needed
+* goodbye
+    - utter_goodbye    
+
+## story_utter_e2s2_help
+* exercise_help
+    - find_exercise_nos   
+* inform{"exercise_no":"2"}    
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - utter_advanced_help    
+* affirm
+    - utter_affirm_advanced_help
+    - utter_e2s2_story_1
+* ask_course_item{"course_item":"REST-based API"}
+    - find_in_db 
+    - slot{"course_item_found": true} 
+    - utter_e2s2_story_2
+    - utter_e2s2_story_3
+* deny    
+    - utter_e2s2_story_4
+    - utter_e2s2_story_5
+* deny    
+    - utter_e2s2_story_6
+* affirm    
+    - utter_e2s2_story_7
+    - utter_e2s2_story_8
+    - utter_e2s2_story_9
+* deny
+    - utter_e2s2_story_10
+    - utter_send_contact_details
+    - utter_continue
+* affirm    
+    - utter_e2s2_story_11
+    - utter_e2s2_story_12
+    - utter_e2s2_story_13
+    - utter_e2s2_story_14
+* deny    
+    - utter_e2s2_story_15
+    - utter_e2s2_story_16
+    - utter_continue
+* affirm    
+    - utter_e2s2_story_17
+    - utter_e2s2_story_18
+* deny    
+    - utter_e2s2_story_19
+    - utter_e2s2_story_20
+    - utter_e2s2_story_21
+* deny    
+    - utter_e2s2_story_22
+    - utter_e2s2_story_23
+    - utter_e2s2_story_24
+    - utter_e2s2_story_25
+    - utter_e2s2_story_26
+    - utter_e2s2_story_27
+    - utter_continue
+* affirm    
+    - utter_e2s2_story_28
+    - utter_e2s2_story_29
+    - utter_e2s2_story_30
+    - utter_e2s2_story_31
+    - utter_e2s2_story_32
+    - utter_e2s2_story_33
+    - utter_e2s2_story_34
+* deny
+    - utter_e2s2_story_35
+* affirm
+    - utter_e2s2_story_36    
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": true}  
+    - utter_e2s2_story_37
+* deny    
+    - utter_e2s2_story_38
+    - utter_send_contact_details
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": true}    
+    - utter_e2s2_story_39
+* affirm    
+    - utter_e2s2_story_40
+    - utter_e2s2_story_41
+    - utter_e2s2_story_42
+    - utter_e2s2_story_43
+    - utter_e2s2_story_44
+* deny    
+    - utter_e2s2_story_45
+* deny    
+    - utter_e2s2_story_46
+    - utter_e2s2_story_47
+* affirm    
+    - utter_e2s2_story_48
+    - utter_e2s2_story_49
+
+## story_exercise_help_without_suggestions
+* exercise_help
+    - find_exercise_nos   
+* inform{"exercise_no":"1"}    
+    - slot{"exercise_no":"1"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - suggest_course_items
+    - slot{"course_item_found": false}
+    - utter_ask_question    
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": true}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+* deny
+    - utter_no_help_needed
+* goodbye
+    - utter_goodbye    
+
