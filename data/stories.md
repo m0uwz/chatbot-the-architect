@@ -265,6 +265,117 @@
     - utter_e2s2_story_49
     - utter_end_conversation    
 
+## story_utter_e2s2_help_with_problems_and_questions
+* exercise_help
+    - find_exercise_nos   
+* inform{"exercise_no":"2"}    
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help": true}
+    - utter_advanced_help    
+* affirm
+    - utter_affirm_advanced_help
+    - utter_e2s2_story_1
+* ask_course_item{"course_item":"REST-based API"}
+    - find_in_db 
+    - slot{"course_item_found": true} 
+    - utter_e2s2_story_2
+    - utter_e2s2_story_3
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": false}
+    - find_in_pdf
+    - slot{"course_item_found": true} 
+    - utter_e2s2_story_3   
+* deny    
+    - utter_e2s2_story_4
+    - utter_e2s2_story_5
+* deny    
+    - utter_e2s2_story_6
+* affirm    
+    - utter_e2s2_story_7
+    - utter_e2s2_story_8
+    - utter_e2s2_story_9
+* deny
+    - utter_e2s2_story_10
+    - utter_send_contact_details
+    - utter_continue
+* affirm    
+    - utter_e2s2_story_11
+    - utter_e2s2_story_12
+    - utter_e2s2_story_13
+    - utter_e2s2_story_14
+* deny    
+    - utter_e2s2_story_15
+    - utter_e2s2_story_16
+    - utter_continue
+* affirm    
+    - utter_e2s2_story_17
+    - utter_e2s2_story_18
+* deny    
+    - utter_e2s2_story_19
+    - utter_e2s2_story_20
+    - utter_e2s2_story_21
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": false}
+    - find_in_pdf
+    - slot{"course_item_found": true} 
+    - utter_e2s2_story_21      
+* deny    
+    - utter_e2s2_story_22
+    - utter_e2s2_story_23
+    - utter_e2s2_story_24
+    - utter_e2s2_story_25
+    - utter_e2s2_story_26
+    - utter_e2s2_story_27
+    - utter_continue
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": true}
+    - utter_continue      
+* affirm    
+    - utter_e2s2_story_28
+    - utter_e2s2_story_29
+    - utter_e2s2_story_30
+    - utter_e2s2_story_31
+    - utter_e2s2_story_32
+    - utter_e2s2_story_33
+    - utter_e2s2_story_34
+* deny
+    - utter_e2s2_story_35
+* affirm
+    - utter_e2s2_story_36    
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": true}  
+    - utter_e2s2_story_37
+* deny    
+    - utter_e2s2_story_38
+    - utter_send_contact_details
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found": true}    
+    - utter_e2s2_story_39
+* affirm    
+    - utter_e2s2_story_40
+    - utter_e2s2_story_41
+    - utter_e2s2_story_42
+    - utter_e2s2_story_43
+    - utter_e2s2_story_44
+* deny    
+    - utter_e2s2_story_45
+* deny    
+    - utter_e2s2_story_46
+    - utter_e2s2_story_47
+* affirm    
+    - utter_e2s2_story_48
+    - utter_e2s2_story_49
+    - utter_end_conversation      
+
 ## story_exercise_help_without_suggestions
 * exercise_help
     - find_exercise_nos   

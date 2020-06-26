@@ -139,40 +139,43 @@ class FindInPdf(Action):
 
         found = False
         course_item = tracker.get_slot("course_item")   
-        dispatcher.utter_message("I found this slot course item:")
-        dispatcher.utter_message(str(course_item))
 
-                   
-        # TOCHANGE
-        # reader = PyPDF2.PdfFileReader("/app/actions/test.pdf")
-        reader = PyPDF2.PdfFileReader("test.pdf")
-        # writer = PyPDF2.PdfFileWriter()
-        
-        numPages = reader.getNumPages()
+        if course_item: 
+            dispatcher.utter_message("I found this slot course item:")
+            dispatcher.utter_message(str(course_item))
 
-        for i in range(0, numPages):
-            PageObj = reader.getPage(i)
-            # dispatcher.utter_message("this is page " + str(i)) 
-            pdfText = PageObj.extractText()
-            # print(Text)
-            resSearch = re.search(str(course_item).lower(), pdfText.lower())
-            if resSearch:
-                # writer.addPage(PageObj)
-                # with open('/app/actions/outputi.pdf', 'wb') as outfile:
-                    # writer.write(outfile)
-                found = True
-                dispatcher.utter_message(pdfText)
-           
-        dispatcher.utter_message("Der Aufruf klappt schon mal... :-)")     
-        dispatcher.utter_message(image="https://i.imgur.com/nGF1K8f.jpg")
-        dispatcher.utter_message(
-                text=(
-                    f"I did not find any matching issues on our [forum](https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf):\n"
-                    f"I recommend you post your question there."
-                )
-            )
+                    
+            # TOCHANGE
+            # reader = PyPDF2.PdfFileReader("/app/actions/test.pdf")
+            reader = PyPDF2.PdfFileReader("test.pdf")
+            # writer = PyPDF2.PdfFileWriter()
+            
+            numPages = reader.getNumPages()
 
-        return [SlotSet("course_item_found", found)]
+            for i in range(0, numPages):
+                PageObj = reader.getPage(i)
+                # dispatcher.utter_message("this is page " + str(i)) 
+                pdfText = PageObj.extractText()
+                # print(Text)
+                resSearch = re.search(str(course_item).lower(), pdfText.lower())
+                if resSearch:
+                    # writer.addPage(PageObj)
+                    # with open('/app/actions/outputi.pdf', 'wb') as outfile:
+                        # writer.write(outfile)
+                    found = True
+                    dispatcher.utter_message(pdfText)
+            
+            #dispatcher.utter_message("Der Aufruf klappt schon mal... :-)")     
+            #dispatcher.utter_message(image="https://i.imgur.com/nGF1K8f.jpg")
+            #dispatcher.utter_message(
+            #        text=(
+            #            f"I did not find any matching issues on our [forum](https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf):\n"
+            #            f"I recommend you post your question there."
+            #        )
+            #    )
+
+        return [SlotSet("course_item_found", found),
+                SlotSet("course_item", None)]
 
 
 class FindInDb(Action):
@@ -192,18 +195,20 @@ class FindInDb(Action):
 
         found = False
         course_item = tracker.get_slot("course_item")   
-        dispatcher.utter_message("I found this slot course item:")
-        dispatcher.utter_message(str(course_item))
 
-        db = Database()
-        course_items = db.get_course_items()
+        if course_item:
+            dispatcher.utter_message("I found this slot course item:")
+            dispatcher.utter_message(str(course_item))
 
-        for item in course_items:
-            title = item.title
-            similarity = SequenceMatcher(None, title.lower(), course_item.lower()).ratio()
-            if similarity >= 0.8:
-                found = True
-                dispatcher.utter_message(item.description)
+            db = Database()
+            course_items = db.get_course_items()
+
+            for item in course_items:
+                title = item.title
+                similarity = SequenceMatcher(None, title.lower(), course_item.lower()).ratio()
+                if similarity >= 0.8:
+                    found = True
+                    dispatcher.utter_message(item.description)
 
         return [SlotSet("course_item_found", found)]
 
