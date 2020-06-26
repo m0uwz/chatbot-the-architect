@@ -9,6 +9,7 @@
 - si
 - ok
 - okay
+- Yes
 
 ## intent:deny
 - no
@@ -19,6 +20,7 @@
 - noope
 - do you have something else
 - no this does not work for me
+- No
 
 ## intent:out_of_scope
 - please help with my ice cream it's dripping
@@ -108,6 +110,12 @@
 - I want information about the [Economic value](course_item)
 - what do I need [SLA](course_item) for
 - whats [KPI](course_item)
+- What is [Software architecture](course_item)?
+- What is [Node.js](course_item)?
+- Yes. What is [System design](course_item)?
+- what is [Node.js](course_item)?
+- What is [Postman](course_item)?
+- what is [UML Sequence diagram](course_item)?
 
 ## intent:inform
 - [1](exercise_no)
@@ -120,7 +128,6 @@
 - [3](subtask_no)
 - [4](subtask_no)
 - [5](subtask_no)
-
 
 ## intent:thanks
 - Thanks
