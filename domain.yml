@@ -1,19 +1,21 @@
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - inform
-  - search_provider
-  - thanks
-  - out_of_scope
-  - ask_course_item
-  - general_question
-  - exercise_help
-  - get_started
-
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- inform
+- search_provider
+- thanks
+- out_of_scope
+- ask_course_item
+- general_question
+- exercise_help
+- get_started
 entities:
 - facility_type
 - facility_id
@@ -21,28 +23,223 @@ entities:
 - course_item
 - exercise_no
 - subtask_no
-
 slots:
-  facility_type:
+  course_item:
     type: unfeaturized
+  course_item_found:
+    type: bool
+  exercise_no:
+    type: text
   facility_address:
     type: unfeaturized
   facility_id:
     type: unfeaturized
+  facility_type:
+    type: unfeaturized
   location:
     type: unfeaturized
-  course_item:
+  requested_slot:
     type: unfeaturized
-  exercise_no:
-    type: unfeaturized  
   subtask_no:
-    type: unfeaturized
-  course_item_found:
-    type: bool   
-
-forms:
-- facility_form
-
+    type: text
+responses:
+  utter_greet:
+  - text: Hi. What are you looking for?
+  - text: Hey there! Please choose one of the healthcare facility options
+  - text: Hello! What can I help you find today?
+  utter_goodbye:
+  - text: Talk to you later!
+  - text: Have a good day.
+  - text: Until next time!
+  utter_noworries:
+  - text: My pleasure.
+  - text: You are welcome!
+  utter_ask_facility_type:
+  - text: 'Choose one of the following to search for: hospital, nursing home, or home
+      health agency.'
+  utter_ask_location:
+  - text: Please provide your city name.
+  - text: What is your current city?
+  - text: Please provide your city name or zip code.
+  - text: Please enter your zip code or city name to find local providers.
+  utter_address:
+  - text: The address is {facility_address}.
+  utter_ask_help_type:
+  - buttons:
+    - payload: /general_question
+      title: General question
+    - payload: /exercise_help
+      title: Help with an exercise
+    text: How can I help you?
+  utter_ask_helpfulness:
+  - buttons:
+    - payload: /affirm
+      title: Thumbs up
+    - payload: /deny
+      title: Thumbs down
+    text: Did that help you?
+  utter_joy:
+  - text: That pleases me!
+  - text: I am glad that I could help you.
+  - text: I love to be helpful!
+  utter_further_question:
+  - text: Do you have another question?
+  - text: Do you want to ask me anything else?
+  utter_no_help_needed:
+  - text: All right. I am available to you at any time.
+  - text: OK. I look forward to helping you again next time.
+  - text: Okay. I look forward to talking to you again soon.
+  utter_ask_question:
+  - text: Feel free to ask me a question!
+  - text: What question can I help you with?
+  - text: How can I help you?
+  utter_rephrase_question:
+  - text: Could you please rephrase your request? I may not have understood your request
+      correctly.
+  - text: Can you express your request in other words? Maybe I didn't understand you
+      correctly.
+  utter_can_not_help:
+  - text: Unfortunately I can't help you with that. I'm sorry.
+  - text: I don't know anything about that. Unfortunately I can't help you, sorry.
+  utter_send_contact_details:
+  - text: 'If you want, you can contact the professor directly by email: sascha.alda@h-brs.de'
+  utter_advanced_help:
+  - buttons:
+    - payload: /affirm
+      title: Yes
+    - payload: /deny
+      title: No
+    text: Shall we go through the whole exercise together?
+  utter_affirm_advanced_help:
+  - text: Great, let's go through the task together.
+  utter_continue:
+  - buttons:
+    - payload: /affirm
+      title: Continue
+    text: Continue?
+  utter_e2s2_story_1:
+  - buttons:
+    - payload: /affirm
+      title: Yes
+    - payload: '/ask_course_item{"course_item": "REST-based API"}'
+      title: No
+    text: Do you know what a REST-based API is?
+  utter_e2s2_story_2:
+  - text: We now want to use the APIs of the two enterpise applications OrangeHRM
+      and OpenCRX. For example, we can use it to obtain information such as "Which
+      employees with the job of salesperson are there?" or "How many vacuum cleaners
+      could a particular employee sell?"
+  utter_e2s2_story_3:
+  - text: To address the APIs, we need the tool "Postman". Have you downloaded it
+      yet?
+  utter_e2s2_story_4:
+  - text: 'No problem. You can download it for free: https://www.postman.com/downloads/'
+  utter_e2s2_story_5:
+  - text: Can we continue?
+  utter_e2s2_story_6:
+  - text: Okay, with questions about the contents please read my last messages again.
+      And make sure you have installed the tool. I'm waiting for your okay to continue.
+  utter_e2s2_story_7:
+  - text: "Excellent! First, let's look at the OrangeHRM application. My tip: Before\
+      \ we look at the API endpoints, let's get familiar with the program first. You\
+      \ can find the application in the university network (or via VPN) here: https://sepp-hrm.inf.h-brs.de"
+  utter_e2s2_story_8:
+  - text: Log in there. You can find the login details in the OrangeHRM documentation
+      that was provided to you within this course.
+  utter_e2s2_story_9:
+  - text: Are you logged in now?
+  utter_e2s2_story_10:
+  - text: Please try it again. Maybe you made a typo.
+  utter_e2s2_story_11:
+  - text: Now that you are logged in, I would like to say something about OrangeHRM.
+      This application is HR tool, which is used to manage a company's employees and
+      their important data.
+  utter_e2s2_story_12:
+  - text: Take a look around and click through the different views.
+  utter_e2s2_story_13:
+  - text: 'My tip: Look in particular the list of all available employees.'
+  utter_e2s2_story_14:
+  - text: Did you find the list?
+  utter_e2s2_story_15:
+  - text: Click on "PIM" and then select the "Employee List".
+  utter_e2s2_story_16:
+  - text: Once you've found it, we can go ahead.
+  utter_e2s2_story_17:
+  - text: Now let's try sending our first request to the API.
+  utter_e2s2_story_18:
+  - text: Have you already found the official documentation of the OrangeHRM REST
+      API?
+  utter_e2s2_story_19:
+  - text: 'No problem, here it is: https://orangehrm.github.io/orangehrm-api-doc/'
+  utter_e2s2_story_20:
+  - text: You will find the API endpoints in the documentation. That means we can
+      send requests to these endpoints. For example, you can get information via GET-HTTP
+      requests. With POST-HTTP requests you can write new data to the OrangeHRM application.
+  utter_e2s2_story_21:
+  - text: Ready for our first request?
+  utter_e2s2_story_22:
+  - text: Don't worry, we'll do it together!
+  utter_e2s2_story_23:
+  - text: We will now request a list of all employees.
+  utter_e2s2_story_24:
+  - text: Please keep in mind that OrangeHRM uses a Bearer authentication. For that
+      you should reuse one of the key-value pairs ('ID', 'secret') that must be inserted
+      in the HTTP header.
+  utter_e2s2_story_25:
+  - text: 'This pair can be found here: / Admin / Configuration / Register OAuth Client'
+  utter_e2s2_story_26:
+  - text: Prior to our request, a token must be requested. Your task is to send a
+      GET-HTTP request to the API and add client_id (see above), client_secret (see
+      above) and grant_type = client_credentials to the header.
+  utter_e2s2_story_27:
+  - text: Let's move on. Please open the tool Postman.
+  utter_e2s2_story_28:
+  - text: 'Step 1: Create a new request.'
+  utter_e2s2_story_29:
+  - text: 'Step 2: Choose GET as the request type'
+  utter_e2s2_story_30:
+  - text: 'Step 3: Enter the request URL https://sepp-hrm.inf.h-brs.de/symfony/web/index.php/oauth/issueToken'
+  utter_e2s2_story_31:
+  - text: 'Step 4: Paste the key-value pairs in the header as mentioned before.'
+  utter_e2s2_story_32:
+  - text: 'Step 5: Send the request!'
+  utter_e2s2_story_33:
+  - text: 'My tip: You can save requests in Postman.'
+  utter_e2s2_story_34:
+  - text: Did it work out? Have you received a reply?
+  utter_e2s2_story_35:
+  - text: Are you on the university network or in the VPN?
+  utter_e2s2_story_36:
+  - text: Please try again. Do you have a question about a term?
+  utter_e2s2_story_37:
+  - text: Does your request work with this help?
+  utter_e2s2_story_38:
+  - text: Okay, you can either ask me more questions or contact the professor.
+  utter_e2s2_story_40:
+  - text: Great! Let's continue.
+  utter_e2s2_story_41:
+  - text: We have now received the token. Please copy it so that we can paste it into
+      our actual request to get a list of all employees.
+  utter_e2s2_story_42:
+  - text: Create a new GET request. Put the copied token in this request and select
+      'Bearer Token' as the type for authorization.
+  utter_e2s2_story_43:
+  - text: Find the corresponding end point from the official OrangeHRM documentation
+      and copy the URL. When you submit this request, you should receive a list of
+      employees.
+  utter_e2s2_story_44:
+  - text: Did you get the list?
+  utter_e2s2_story_45:
+  - text: Did you find a suitable end point in the documentation? https://orangehrm.github.io/orangehrm-api-doc/
+  utter_e2s2_story_46:
+  - text: 'My tip: The end point is / api / v1 / employee / search'
+  utter_e2s2_story_47:
+  - text: Did it work now?
+  utter_e2s2_story_48:
+  - text: Perfect! Congratulations on your successful query!
+  utter_e2s2_story_49:
+  - text: Come up with more queries. For example, you could search for a specific
+      employee.
 actions:
 - utter_noworries
 - utter_greet
@@ -65,8 +262,8 @@ actions:
 - utter_no_help_needed
 - utter_rephrase_question
 - utter_send_contact_details
-- utter_advanced_help 
-- utter_affirm_advanced_help 
+- utter_advanced_help
+- utter_affirm_advanced_help
 - utter_continue
 - utter_e2s2_story_1
 - utter_e2s2_story_2
@@ -117,249 +314,6 @@ actions:
 - utter_e2s2_story_47
 - utter_e2s2_story_48
 - utter_e2s2_story_49
- 
-
-responses:
-  utter_greet:
-  - text: Hi. 👋
-  - text: Hey there! 👋
-  - text: Hello! 👋
-
-  utter_goodbye:
-  - text: Talk to you later!
-  - text: Have a good day.
-  - text: Until next time!
-
-  utter_noworries:
-  - text: My pleasure.
-  - text: You are welcome!
-
-  utter_ask_facility_type:
-  - text: "Choose one of the following to search for: hospital, nursing home, or home health agency."
-
-  utter_ask_location:
-  - text: Please provide your city name.
-  - text: What is your current city?
-  - text: Please provide your city name or zip code.
-  - text: Please enter your zip code or city name to find local providers.
-
-  utter_address:
-  - text: The address is {facility_address}.
-
-  utter_ask_help_type:
-  - buttons:
-    - payload: /general_question
-      title: General question
-    - payload: /exercise_help
-      title: Help with an exercise
-    text: How can I help you?
-
-  utter_ask_helpfulness:
-  - buttons:
-    - payload: /affirm
-      title: Thumbs up 
-    - payload: /deny
-      title: Thumbs down    
-    text: Did that help you? 
-
-  utter_joy:
-    - text: That pleases me!
-    - text: I am glad that I could help you.  
-    - text: I love to be helpful!
-
-  utter_further_question:
-    - text: Do you have another question?
-    - text: Do you want to ask me anything else?
-
-  utter_no_help_needed:
-    - text: All right. I am available to you at any time.
-    - text: OK. I look forward to helping you again next time.
-    - text: Okay. I look forward to talking to you again soon.
-
-  utter_ask_question:
-  - text: Feel free to ask me a question! 
-  - text: What question can I help you with? 
-  - text: How can I help you?
-
-  utter_rephrase_question:
-  - text: Could you please rephrase your request? I may not have understood your request correctly.
-  - text: Can you express your request in other words? Maybe I didn't understand you correctly.
-
-  utter_can_not_help:
-  - text: Unfortunately I can't help you with that. I'm sorry.
-  - text: I don't know anything about that. Unfortunately I can't help you, sorry.
-
-  utter_send_contact_details:
-  - text: "If you want, you can contact the professor directly by email: sascha.alda@h-brs.de"
-
-  utter_advanced_help:
-  - buttons:
-    - payload: /affirm
-      title: "Yes"
-    - payload: /deny
-      title: "No"
-    text: Shall we go through the whole exercise together?
-
-  utter_affirm_advanced_help:
-  - text: Great, let's go through the task together.  
-
-  utter_continue:
-  - buttons:
-    - payload: /affirm
-      title: Continue
-    text: Continue?
-
-  utter_e2s2_story_1:
-  - buttons:
-    - payload: /affirm
-      title: "Yes"
-    - payload: '/ask_course_item{"course_item": "REST-based API"}'
-      title: "No" 
-    text: Do you know what a REST-based API is?
-
-  utter_e2s2_story_2:
-  - text: We now want to use the APIs of the two enterpise applications OrangeHRM and OpenCRX. For example, we can use it to obtain information such as "Which employees with the job of salesperson are there?" or "How many vacuum cleaners could a particular employee sell?"
-
-  utter_e2s2_story_3:
-  - text: To address the APIs, we need the tool "Postman". Have you downloaded it yet?
-
-  utter_e2s2_story_4:
-  - text: "No problem. You can download it for free: https://www.postman.com/downloads/"
-
-  utter_e2s2_story_5:
-  - text: Can we continue?
-
-  utter_e2s2_story_6:
-  - text: Okay, with questions about the contents please read my last messages again. And make sure you have installed the tool. I'm waiting for your okay to continue.
-
-  utter_e2s2_story_7:
-  - text: "Excellent! First, let's look at the OrangeHRM application. My tip: Before we look at the API endpoints, let's get familiar with the program first. You can find the application in the university network (or via VPN) here: https://sepp-hrm.inf.h-brs.de"
-
-  utter_e2s2_story_8:
-  - text: Log in there. You can find the login details in the OrangeHRM documentation that was provided to you within this course.
-
-  utter_e2s2_story_9:
-  - text: Are you logged in now?
-
-  utter_e2s2_story_10:
-  - text: "Please try it again. Maybe you made a typo."
-
-  utter_e2s2_story_11:
-  - text: Now that you are logged in, I would like to say something about OrangeHRM. This application is HR tool, which is used to manage a company's employees and their important data.
-
-  utter_e2s2_story_12:
-  - text: Take a look around and click through the different views.
-
-  utter_e2s2_story_13:
-  - text: "My tip: Look in particular the list of all available employees."
-
-  utter_e2s2_story_14:
-  - text: Did you find the list?
-
-  utter_e2s2_story_15:
-  - text: Click on "PIM" and then select the "Employee List".
-
-  utter_e2s2_story_16:
-  - text: Once you've found it, we can go ahead.
-
-  utter_e2s2_story_17:
-  - text: Now let's try sending our first request to the API.
-
-  utter_e2s2_story_18:
-  - text: Have you already found the official documentation of the OrangeHRM REST API?
-
-  utter_e2s2_story_19:
-  - text: "No problem, here it is: https://orangehrm.github.io/orangehrm-api-doc/"
-
-  utter_e2s2_story_20:
-  - text: You will find the API endpoints in the documentation. That means we can send requests to these endpoints. For example, you can get information via GET-HTTP requests. With POST-HTTP requests you can write new data to the OrangeHRM application.
-
-  utter_e2s2_story_21:
-  - text: Ready for our first request?
-
-  utter_e2s2_story_22:
-  - text: Don't worry, we'll do it together!
-
-  utter_e2s2_story_23:
-  - text: We will now request a list of all employees.
-
-  utter_e2s2_story_24:
-  - text: Please keep in mind that OrangeHRM uses a Bearer authentication. For that you should reuse one of the key-value pairs ('ID', 'secret') that must be inserted in the HTTP header.
-
-  utter_e2s2_story_25:
-  - text: "This pair can be found here: / Admin / Configuration / Register OAuth Client"
-
-  utter_e2s2_story_26:
-  - text: Prior to our request, a token must be requested. Your task is to send a GET-HTTP request to the API and add client_id (see above), client_secret (see above) and grant_type = client_credentials to the header. 
-
-  utter_e2s2_story_27:
-  - text: Let's move on. Please open the tool Postman.
-
-  utter_e2s2_story_28:
-  - text: "Step 1: Create a new request."
-  
-  utter_e2s2_story_29:
-  - text: "Step 2: Choose GET as the request type"
-
-  utter_e2s2_story_30:
-  - text: "Step 3: Enter the request URL https://sepp-hrm.inf.h-brs.de/symfony/web/index.php/oauth/issueToken"
-
-  utter_e2s2_story_31:
-  - text: "Step 4: Paste the key-value pairs in the header as mentioned before."
-
-  utter_e2s2_story_32:
-  - text: "Step 5: Send the request!"
-  
-  utter_e2s2_story_33:
-  - text: "My tip: You can save requests in Postman."
-
-  utter_e2s2_story_34:
-  - text: Did it work out? Have you received a reply?
-
-  utter_e2s2_story_35:
-  - text: Are you on the university network or in the VPN?
-
-  utter_e2s2_story_36:
-  - text: Please try again. Do you have a question about a term?
-
-  utter_e2s2_story_37:
-  - text: Does your request work with this help?
-
-  utter_e2s2_story_38:
-  - text: Okay, you can either ask me more questions or contact the professor.
-
-  utter_e2s2_story_39:
-  - text: Does your request work with this help?
-
-  utter_e2s2_story_40:
-  - text: Great! Let's continue. 
-
-  utter_e2s2_story_41:
-  - text: We have now received the token. Please copy it so that we can paste it into our actual request to get a list of all employees.
-
-  utter_e2s2_story_42:
-  - text: Create a new GET request. Put the copied token in this request and select 'Bearer Token' as the type for authorization.
-
-  utter_e2s2_story_43:
-  - text: Find the corresponding end point from the official OrangeHRM documentation and copy the URL. When you submit this request, you should receive a list of employees.
-
-  utter_e2s2_story_44:
-  - text: Did you get the list?
-
-  utter_e2s2_story_45:
-  - text: Did you find a suitable end point in the documentation? https://orangehrm.github.io/orangehrm-api-doc/
-
-  utter_e2s2_story_46:
-  - text: "My tip: The end point is / api / v1 / employee / search"
-
-  utter_e2s2_story_47:
-  - text: Did it work now?
-
-  utter_e2s2_story_48:
-  - text: Perfect! Congratulations on your successful query!
-
-  utter_e2s2_story_49:
-  - text: Come up with more queries. For example, you could search for a specific employee.
-
-
-
+- utter_can_not_help
+forms:
+- facility_form
