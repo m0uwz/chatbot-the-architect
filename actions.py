@@ -435,3 +435,28 @@ class FindInDb(Action):
                 dispatcher.utter_message(item.description)
 
         return [SlotSet("course_item_found", found)]
+
+
+class FillAdvancedHelpSlot(Action):
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "fill_advanced_help_slot"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict]:
+
+        exercise_no = tracker.get_slot("exercise_no")    
+        subtask_no = tracker.get_slot("subtask_no")    
+
+        advanced_help = False
+
+        if str(exercise_no) in ["2"]:
+            print("ich bin 2 ex")
+            if str(subtask_no) in ["2"]:
+                print("ich bin 2 sub")
+                advanced_help = True
+
+        return [SlotSet("advanced_help", advanced_help)]

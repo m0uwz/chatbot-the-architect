@@ -42,6 +42,8 @@ slots:
     type: unfeaturized
   subtask_no:
     type: text
+  advanced_help:
+    type: bool   
 responses:
   utter_greet:
   - text: Hi. 👋
@@ -254,6 +256,7 @@ actions:
 - find_exercise_nos
 - find_subtask_nos
 - suggest_course_items
+- fill_advanced_help_slot
 - utter_ask_help_type
 - utter_ask_question
 - utter_ask_helpfulness

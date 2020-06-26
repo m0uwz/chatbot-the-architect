@@ -138,6 +138,8 @@
     - find_subtask_nos
 * inform{"subtask_no":"1"}
     - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help": false}
     - suggest_course_items
     - slot{"course_item_found": true}    
 * ask_course_item{"course_item":"System design"}
@@ -160,6 +162,8 @@
     - find_subtask_nos
 * inform{"subtask_no":"2"}
     - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help": true}
     - utter_advanced_help    
 * affirm
     - utter_affirm_advanced_help
@@ -252,6 +256,8 @@
     - find_subtask_nos
 * inform{"subtask_no":"1"}
     - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help": false}
     - suggest_course_items
     - slot{"course_item_found": false}
     - utter_ask_question    
