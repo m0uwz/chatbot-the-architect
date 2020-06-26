@@ -44,7 +44,9 @@ class Database():
         session = self._open_session()
         exercise = session.query(Exercise).filter(Exercise.exercise_no == exercise_no).first()
         subtask = session.query(Subtask).filter(Subtask.exercise_id == exercise.id).filter(Subtask.subtask_no == subtask_no).first()
-        course_items = subtask.course_items
-        print(course_items)
-        session.close()
+        course_item_relationships = subtask.course_items
+        course_items = []
+        for relationship in course_item_relationships:
+            course_items.append(relationship.course_item)
+        session.close()    
         return course_items

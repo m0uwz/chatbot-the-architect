@@ -121,9 +121,9 @@ actions:
 
 responses:
   utter_greet:
-  - text: Hi. What are you looking for?
-  - text: Hey there! Please choose one of the healthcare facility options
-  - text: Hello! What can I help you find today?
+  - text: Hi. 👋
+  - text: Hey there! 👋
+  - text: Hello! 👋
 
   utter_goodbye:
   - text: Talk to you later!
