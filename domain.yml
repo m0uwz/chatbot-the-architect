@@ -9,7 +9,6 @@ intents:
 - mood_great
 - mood_unhappy
 - inform
-- search_provider
 - thanks
 - out_of_scope
 - ask_course_item
@@ -17,9 +16,6 @@ intents:
 - exercise_help
 - get_started
 entities:
-- facility_type
-- facility_id
-- location
 - course_item
 - exercise_no
 - subtask_no
@@ -30,16 +26,6 @@ slots:
     type: bool
   exercise_no:
     type: text
-  facility_address:
-    type: unfeaturized
-  facility_id:
-    type: unfeaturized
-  facility_type:
-    type: unfeaturized
-  location:
-    type: unfeaturized
-  requested_slot:
-    type: unfeaturized
   subtask_no:
     type: text
   advanced_help:
@@ -113,7 +99,7 @@ responses:
       title: No
     text: Shall we go through the whole exercise together?
   utter_affirm_advanced_help:
-  - text: Great, let's go through the task together.
+  - text: "Great, let's go through the task together. ⭐"
   utter_continue:
   - buttons:
     - payload: /affirm
@@ -127,10 +113,10 @@ responses:
       title: No
     text: Do you know what a REST-based API is?
   utter_e2s2_story_2:
-  - text: We now want to use the APIs of the two enterpise applications OrangeHRM
-      and OpenCRX. For example, we can use it to obtain information such as "Which
+  - text: 'We now want to use the APIs of the two enterpise applications **OrangeHRM**
+      and **OpenCRX**. For example, we can use it to obtain information such as "Which
       employees with the job of salesperson are there?" or "How many vacuum cleaners
-      could a particular employee sell?"
+      could a particular employee sell?" 💸'
   utter_e2s2_story_3:
   - text: To address the APIs, we need the tool "Postman". Have you downloaded it
       yet?
@@ -142,7 +128,7 @@ responses:
   - text: Okay, with questions about the contents please read my last messages again.
       And make sure you have installed the tool. I'm waiting for your okay to continue.
   utter_e2s2_story_7:
-  - text: "Excellent! First, let's look at the OrangeHRM application. My tip: Before\
+  - text: "Excellent! First, let's look at the **OrangeHRM** application. **My tip:** Before\
       \ we look at the API endpoints, let's get familiar with the program first. You\
       \ can find the application in the university network (or via VPN) here: https://sepp-hrm.inf.h-brs.de"
   utter_e2s2_story_8:
@@ -159,7 +145,7 @@ responses:
   utter_e2s2_story_12:
   - text: Take a look around and click through the different views.
   utter_e2s2_story_13:
-  - text: 'My tip: Look in particular the list of all available employees.'
+  - text: '**My tip:** Look in particular the list of all available employees.'
   utter_e2s2_story_14:
   - text: Did you find the list?
   utter_e2s2_story_15:
@@ -167,7 +153,7 @@ responses:
   utter_e2s2_story_16:
   - text: Once you've found it, we can go ahead.
   utter_e2s2_story_17:
-  - text: Now let's try sending our first request to the API.
+  - text: Great! ⭐ Now let's try sending our first request to the API.
   utter_e2s2_story_18:
   - text: Have you already found the official documentation of the OrangeHRM REST
       API?
@@ -180,7 +166,7 @@ responses:
   utter_e2s2_story_21:
   - text: Ready for our first request?
   utter_e2s2_story_22:
-  - text: Don't worry, we'll do it together!
+  - text: "Don't worry, we'll do it together! ❤️"
   utter_e2s2_story_23:
   - text: We will now request a list of all employees.
   utter_e2s2_story_24:
@@ -194,19 +180,19 @@ responses:
       GET-HTTP request to the API and add client_id (see above), client_secret (see
       above) and grant_type = client_credentials to the header.
   utter_e2s2_story_27:
-  - text: Let's move on. Please open the tool Postman.
+  - text: "Let's move on. ⭐ Please open the tool Postman."
   utter_e2s2_story_28:
-  - text: 'Step 1: Create a new request.'
+  - text: '**Step 1:** Create a new request.'
   utter_e2s2_story_29:
-  - text: 'Step 2: Choose GET as the request type'
+  - text: '**Step 2:** Choose GET as the request type'
   utter_e2s2_story_30:
-  - text: 'Step 3: Enter the request URL https://sepp-hrm.inf.h-brs.de/symfony/web/index.php/oauth/issueToken'
+  - text: '**Step 3:** Enter the request URL https://sepp-hrm.inf.h-brs.de/symfony/web/index.php/oauth/issueToken'
   utter_e2s2_story_31:
-  - text: 'Step 4: Paste the key-value pairs in the header as mentioned before.'
+  - text: '**Step 4:** Paste the key-value pairs in the header as mentioned before.'
   utter_e2s2_story_32:
-  - text: 'Step 5: Send the request!'
+  - text: '**Step 5:** Send the request!'
   utter_e2s2_story_33:
-  - text: 'My tip: You can save requests in Postman.'
+  - text: '**My tip:** You can save requests in Postman.'
   utter_e2s2_story_34:
   - text: Did it work out? Have you received a reply?
   utter_e2s2_story_35:
@@ -218,7 +204,7 @@ responses:
   utter_e2s2_story_38:
   - text: Okay, you can either ask me more questions or contact the professor.
   utter_e2s2_story_40:
-  - text: Great! Let's continue.
+  - text: "Great! Let's continue. ⭐"
   utter_e2s2_story_41:
   - text: We have now received the token. Please copy it so that we can paste it into
       our actual request to get a list of all employees.
@@ -234,23 +220,20 @@ responses:
   utter_e2s2_story_45:
   - text: Did you find a suitable end point in the documentation? https://orangehrm.github.io/orangehrm-api-doc/
   utter_e2s2_story_46:
-  - text: 'My tip: The end point is / api / v1 / employee / search'
+  - text: '**My tip:** The end point is / api / v1 / employee / search'
   utter_e2s2_story_47:
   - text: Did it work now?
   utter_e2s2_story_48:
-  - text: Perfect! Congratulations on your successful query!
+  - text: "Perfect! **Congratulations** on your successful query! 🌟"
   utter_e2s2_story_49:
   - text: Come up with more queries. For example, you could search for a specific
       employee.
+  utter_end_conversation:
+  - text: "So I got my job done to help you. I'm going to take a break now! 💤 Have fun with the task! Okay, if you have a question again, **feel free to contact me**. 😃💬"
 actions:
 - utter_noworries
 - utter_greet
 - utter_goodbye
-- utter_ask_location
-- utter_ask_facility_type
-- find_facility_types
-- find_healthcare_address
-- utter_address
 - find_in_pdf
 - find_in_db
 - find_exercise_nos
@@ -317,6 +300,5 @@ actions:
 - utter_e2s2_story_47
 - utter_e2s2_story_48
 - utter_e2s2_story_49
-- utter_can_not_help
-forms:
-- facility_form
+- utter_e2s2_story_50
+- utter_end_conversation

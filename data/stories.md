@@ -1,57 +1,10 @@
-## happy_path
-* greet
-    - find_facility_types
-* inform{"facility_type": "xubh-q36u"}    
-    - facility_form
-    - form{"name": "facility_form"}
-    - form{"name": null}
-* inform{"facility_id": 4245}
-    - find_healthcare_address
-    - utter_address
-* thanks
-    - utter_noworries
-
-## happy_path_multi_requests
-* greet
-    - find_facility_types
-* inform{"facility_type": "xubh-q36u"}
-    - facility_form
-    - form{"name": "facility_form"}
-    - form{"name": null}
-* inform{"facility_id": "747604"}
-    - find_healthcare_address
-    - utter_address
-* search_provider{"facility_type": "xubh-q36u"}
-    - facility_form
-    - form{"name": "facility_form"}
-    - form{"name": null}
-* inform{"facility_id": 4245}   
-    - find_healthcare_address
-    - utter_address
-
-## happy_path2
-* search_provider{"location": "Austin", "facility_type": "xubh-q36u"}
-    - facility_form
-    - form{"name": "facility_form"}
-    - form{"name": null}
-* inform{"facility_id": "450871"}
-    - find_healthcare_address
-    - utter_address
-* thanks
-    - utter_noworries
-
 ## story_goodbye
 * goodbye
-    - find_in_pdf
     - utter_goodbye
 
 ## story_thankyou
 * thanks
     - utter_noworries
-
-## story_find_course_item
-* ask_course_item
-    - find_in_pdf
 
 ## story_initial
 * get_started
@@ -154,7 +107,70 @@
 * goodbye
     - utter_goodbye
 
-## story_utter_e2s2_help
+## story_utter_e2s2_help_happypath
+* exercise_help
+    - find_exercise_nos   
+* inform{"exercise_no":"2"}    
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help": true}
+    - utter_advanced_help    
+* affirm
+    - utter_affirm_advanced_help
+    - utter_e2s2_story_1
+* affirm
+    - utter_e2s2_story_2
+    - utter_e2s2_story_3
+* affirm  
+    - utter_e2s2_story_7
+    - utter_e2s2_story_8
+    - utter_e2s2_story_9
+* affirm
+    - utter_e2s2_story_11
+    - utter_e2s2_story_12
+    - utter_e2s2_story_13
+    - utter_e2s2_story_14
+* affirm    
+    - utter_e2s2_story_15
+    - utter_e2s2_story_16
+    - utter_continue
+* affirm    
+    - utter_e2s2_story_17
+    - utter_e2s2_story_18
+* affirm    
+    - utter_e2s2_story_20
+    - utter_e2s2_story_21
+* affirm    
+    - utter_e2s2_story_23
+    - utter_e2s2_story_24
+    - utter_e2s2_story_25
+    - utter_e2s2_story_26
+    - utter_e2s2_story_27
+    - utter_continue
+* affirm    
+    - utter_e2s2_story_28
+    - utter_e2s2_story_29
+    - utter_e2s2_story_30
+    - utter_e2s2_story_31
+    - utter_e2s2_story_32
+    - utter_e2s2_story_33
+    - utter_e2s2_story_34
+* affirm
+    - utter_e2s2_story_40
+    - utter_e2s2_story_41
+    - utter_e2s2_story_42
+    - utter_e2s2_story_43
+    - utter_e2s2_story_44
+* affirm    
+    - utter_e2s2_story_48
+    - utter_e2s2_story_49
+    - utter_end_conversation
+
+
+## story_utter_e2s2_help_with_problems
 * exercise_help
     - find_exercise_nos   
 * inform{"exercise_no":"2"}    
@@ -247,6 +263,7 @@
 * affirm    
     - utter_e2s2_story_48
     - utter_e2s2_story_49
+    - utter_end_conversation    
 
 ## story_exercise_help_without_suggestions
 * exercise_help
