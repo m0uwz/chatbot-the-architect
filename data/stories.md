@@ -16,6 +16,10 @@
     - utter_greet
     - utter_ask_help_type
 
+## story_need_help
+* need_help
+    - utter_ask_help_type    
+
 ## story_out_of_scope
 * out_of_scope
     - utter_out_of_scope

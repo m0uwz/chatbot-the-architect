@@ -179,5 +179,12 @@
 - a joke please
 - do you know a joke?
 
+## intent:need_help
+- i need help
+- please help me
+- i need help with an exercise
+- i have a question
+- can you help me
+
 ## intent:get_started
 - get_started
