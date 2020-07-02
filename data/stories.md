@@ -20,6 +20,10 @@
 * out_of_scope
     - utter_out_of_scope
 
+## story_joke
+* joke
+    - utter_joke    
+
 ## story_general_question_helpful
 * general_question
     - utter_ask_question

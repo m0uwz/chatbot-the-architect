@@ -174,5 +174,10 @@
 - extremely sad
 - so sad
 
+## intent:joke
+- please tell me a joke
+- a joke please
+- do you know a joke?
+
 ## intent:get_started
 - get_started

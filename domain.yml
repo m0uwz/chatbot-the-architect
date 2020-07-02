@@ -98,6 +98,14 @@ responses:
     - payload: /affirm
       title: Continue
     text: Continue?
+  utter_joke:
+  - text: "Two bytes meet. The first byte asks: 'Are you ill?' The second byte replies: 'No, just feeling a bit off.' 😆" 
+  - text: "What is a programmer's favourite hangout place? - Foo Bar. 😆"
+  - text: "How many programmers does it take to change a light bulb? - None! It's a hardware problem. 😆"
+  - text: "There are only 10 kinds of people in this world: those who know binary and those who don't. 😆"
+  - text: "Three SQL Databases walked into a NoSQL bar. A little while later they walked out... because they couldn't find a table. 😆"
+  - text: "A programmer goes to the shop to buy some milk. His wife calls and says 'While you're out, get some eggs.' He never returns. 😆"
+  - text: "How can you tell an extroverted programmer? - He looks at YOUR shoes when he's talking. 😆"
   utter_e2s2_story_1:
   - buttons:
     - payload: /affirm
