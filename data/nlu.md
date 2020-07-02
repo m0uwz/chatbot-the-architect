@@ -10,6 +10,8 @@
 - ok
 - okay
 - Yes
+- /affirm
+- Yep
 
 ## intent:deny
 - no
@@ -116,6 +118,7 @@
 - what is [Node.js](course_item)?
 - What is [Postman](course_item)?
 - what is [UML Sequence diagram](course_item)?
+- /ask_course_item{"course_item": "REST-based API"}
 
 ## intent:inform
 - [1](exercise_no)
@@ -128,6 +131,8 @@
 - [3](subtask_no)
 - [4](subtask_no)
 - [5](subtask_no)
+- /inform{"exercise_no": "2"}
+- /inform{"subtask_no": "2"}
 
 ## intent:thanks
 - Thanks
