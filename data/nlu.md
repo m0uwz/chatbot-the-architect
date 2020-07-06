@@ -174,6 +174,12 @@
 - extremely sad
 - so sad
 
+## intent:how_are_you
+- how are you?
+- how are you doing?
+- how are you feeling?
+- what's up?
+
 ## intent:joke
 - please tell me a joke
 - a joke please
@@ -185,6 +191,11 @@
 - i need help with an exercise
 - i have a question
 - can you help me
+- now please help me again
+- now back to my problem
+- i have a problem
+- now back to my question
+- i have a question
 
 ## intent:get_started
 - get_started

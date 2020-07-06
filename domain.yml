@@ -57,9 +57,9 @@ responses:
   utter_ask_helpfulness:
   - buttons:
     - payload: /affirm
-      title: Thumbs up
+      title: "👍"
     - payload: /deny
-      title: Thumbs down
+      title: "👎"
     text: Did that help you?
   utter_joy:
   - text: That pleases me!
@@ -100,6 +100,18 @@ responses:
     - payload: /affirm
       title: Continue
     text: Continue?  
+  utter_mood_great: 
+  - text: "I'm allright. Thanks. 👌"
+  - text: "I am fine, thanks. 🤟"
+  - text: "I am well, thanks. 👌"
+  utter_how_are_you:
+  - text: How are you?
+  - text: How are you doing?
+  utter_happy:
+  - text: "Great! 💙"
+  - text: "That makes me happy! 💙"
+  utter_cheer_up:
+  - text: "I'm so sorry! You can ask me to tell a joke. 🤖 Maybe this will cheer you up!"  
   utter_joke:
   - text: "Two bytes meet. The first byte asks: 'Are you ill?' The second byte replies: 'No, just feeling a bit off.' 😆" 
   - text: "What is a programmer's favourite hangout place? - Foo Bar. 😆"
@@ -242,6 +254,7 @@ actions:
 - find_exercise_nos
 - find_subtask_nos
 - suggest_course_items
+- explain_course_item_for_exercise
 - fill_advanced_help_slot
 - utter_ask_help_type
 - utter_ask_question
