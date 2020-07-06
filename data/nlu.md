@@ -180,6 +180,13 @@
 - how are you feeling?
 - what's up?
 
+## intent:insult
+- idiot
+- noob
+- jerk
+- you are stuid
+- you are ugly
+
 ## intent:joke
 - please tell me a joke
 - a joke please

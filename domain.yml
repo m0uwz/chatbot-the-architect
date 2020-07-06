@@ -112,6 +112,10 @@ responses:
   - text: "That makes me happy! 💙"
   utter_cheer_up:
   - text: "I'm so sorry! You can ask me to tell a joke. 🤖 Maybe this will cheer you up!"  
+  utter_handle_insult:
+  - text: "Hey, don't be so mean! ✌️"
+  - text: "Good vibes only... ✌️"
+  - text: "That's not how we talk to each other here! ✌️"
   utter_joke:
   - text: "Two bytes meet. The first byte asks: 'Are you ill?' The second byte replies: 'No, just feeling a bit off.' 😆" 
   - text: "What is a programmer's favourite hangout place? - Foo Bar. 😆"

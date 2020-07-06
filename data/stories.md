@@ -40,7 +40,11 @@
     - utter_mood_great
     - utter_how_are_you
 - mood_unhappy
-    - utter_cheer_up        
+    - utter_cheer_up
+
+## story_insult
+- insult
+    - utter_handle_insult            
 
 ## story_general_question_helpful
 * general_question
