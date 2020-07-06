@@ -119,6 +119,47 @@
 - What is [Postman](course_item)?
 - what is [UML Sequence diagram](course_item)?
 - /ask_course_item{"course_item": "REST-based API"}
+- what is [UML Sequence Diagram](course_item)?
+- what is [UML Class Diagram](course_item)?
+- what are [Architectural styles](course_item)?
+- what is [System design](course_item)?
+- what is [Conways Law](course_item)?
+- what is [SLA](course_item)?
+- what is [legacy system](course_item)?
+- what are [Architecture directives](course_item)?
+- what is [Data transfer](course_item)?
+- what is [shared database](course_item)?
+- what are [methods calls](course_item)?
+- what is [messaging](course_item)?
+- what is a [monolithic](course_item)[monolithic architecture](course_item)?
+- what is [hub and spoke](course_item)?
+- what is [runtime view](course_item)?
+- what is [4 views model](course_item)?
+- what is [UML distribution diagram](course_item)?
+- what is [UML package diagram](course_item)?
+- what is Layer [pattern](course_item)?
+- what is [API](course_item)?
+- what is [object-oriented api](course_item)?
+- what is [CRUD](course_item)?
+- what is [JSON](course_item)?
+- what is [URI](course_item)?
+- what is [URL](course_item)?
+- what is [Spring Boot](course_item)?
+- what is [Swagger](course_item)?
+- what is [Postman](course_item)?
+- what is [Nodejs](course_item)?
+- what is [runtime environment](course_item)?
+- what is [npm package manager](course_item)?
+- what is [npm](course_item)?
+- what is [CLI](course_item)?
+- what is [MongoDB](course_item)?
+- what is [mean-stack](course_item)?
+- what is [message-oriented middleware](course_item)?
+- what is the [request reply pattern](course_item)?
+- what is the [return address pattern](course_item)?
+- what is the [multiple service providers pattern](course_item)?
+- what is the [routing message router pattern](course_item)?
+- what is the [aggregator pattern](course_item)??
 
 ## intent:inform
 - [1](exercise_no)
@@ -202,7 +243,6 @@
 - now back to my problem
 - i have a problem
 - now back to my question
-- i have a question
 
 ## intent:get_started
 - get_started
