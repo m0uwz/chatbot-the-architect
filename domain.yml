@@ -17,6 +17,8 @@ intents:
 - get_started
 - joke
 - need_help
+- how_are_you
+- insult
 entities:
 - course_item
 - exercise_no
@@ -272,6 +274,11 @@ actions:
 - utter_affirm_advanced_help
 - utter_continue
 - utter_out_of_scope
+- utter_mood_great
+- utter_how_are_you
+- utter_happy
+- utter_cheer_up
+- utter_handle_insult
 - utter_e2s2_story_1
 - utter_e2s2_story_2
 - utter_e2s2_story_3
