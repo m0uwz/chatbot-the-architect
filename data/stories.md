@@ -18,7 +18,7 @@
 
 ## story_need_help
 * need_help
-    - utter_ask_help_type    
+    - utter_ask_help_type
 
 ## story_out_of_scope
 * out_of_scope
@@ -26,14 +26,14 @@
 
 ## story_joke
 * joke
-    - utter_joke  
+    - utter_joke
 
 ## story_mood_great
 - how_are_you
     - utter_mood_great
     - utter_how_are_you
 - mood_great
-    - utter_happy          
+    - utter_happy
 
 ## story_mood_unhappy
 - how_are_you
@@ -44,7 +44,7 @@
 
 ## story_insult
 - insult
-    - utter_handle_insult            
+    - utter_handle_insult
 
 ## story_general_question_helpful
 * general_question
@@ -799,3 +799,43 @@
     - utter_send_contact_details
 * thanks
     - utter_noworries
+
+## story_exercise_help_second_question
+
+* get_started
+    - utter_greet
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"1"}
+    - slot{"exercise_no":"1"}
+    - slot{"exercise_no":"1"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"CRUD"}
+    - slot{"course_item":"CRUD"}
+    - slot{"course_item":"CRUD"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - utter_can_not_help
+    - utter_send_contact_details
+* ask_course_item{"course_item":"MongoDB"}
+    - slot{"course_item":"MongoDB"}
+    - slot{"course_item":"MongoDB"}
+    - find_in_db
+    - slot{"exercise_no":"1"}
+    - slot{"subtask_no":"2"}
+    - slot{"course_item":"CRUD"}
+    - slot{"course_item":"MongoDB"}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
