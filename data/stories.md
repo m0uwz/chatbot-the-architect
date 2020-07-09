@@ -56,10 +56,8 @@
 * affirm
     - utter_joy
     - utter_further_question
-* deny
-    - utter_no_help_needed
-* goodbye
-    - utter_goodbye
+* affirm
+    - utter_ask_question    
 
 ## story_general_question_course_item_not_found_in_db_but_pdf
 * general_question
@@ -137,10 +135,8 @@
 * affirm
     - utter_joy
     - utter_further_question
-* deny
-    - utter_no_help_needed
-* goodbye
-    - utter_goodbye
+* affirm
+    - utter_ask_question    
 
 ## story_utter_e2s2_help_happy_path
 * exercise_help
@@ -520,10 +516,8 @@
 * affirm
     - utter_joy
     - utter_further_question
-* deny
-    - utter_no_help_needed
-* goodbye
-    - utter_goodbye
+* affirm
+    - utter_ask_question    
 
 ## story_utter_e2s2_help_with_problems_and_questions_2
 
