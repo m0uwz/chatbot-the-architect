@@ -14,6 +14,7 @@
 ## story_initial
 * get_started
     - utter_greet
+    - utter_explain_usage
     - utter_ask_help_type
 
 ## story_need_help
@@ -57,7 +58,7 @@
     - utter_joy
     - utter_further_question
 * affirm
-    - utter_ask_question    
+    - utter_ask_question
 
 ## story_general_question_course_item_not_found_in_db_but_pdf
 * general_question
@@ -136,7 +137,7 @@
     - utter_joy
     - utter_further_question
 * affirm
-    - utter_ask_question    
+    - utter_ask_question
 
 ## story_utter_e2s2_help_happy_path
 * exercise_help
@@ -517,7 +518,7 @@
     - utter_joy
     - utter_further_question
 * affirm
-    - utter_ask_question    
+    - utter_ask_question
 
 ## story_utter_e2s2_help_with_problems_and_questions_2
 

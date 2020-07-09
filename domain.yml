@@ -19,11 +19,14 @@ intents:
 - need_help
 - how_are_you
 - insult
+- laugh
 entities:
 - course_item
 - exercise_no
 - subtask_no
 slots:
+  advanced_help:
+    type: bool
   course_item:
     type: unfeaturized
   course_item_found:
@@ -32,8 +35,6 @@ slots:
     type: text
   subtask_no:
     type: text
-  advanced_help:
-    type: bool   
 responses:
   utter_greet:
   - text: Hi. 👋
@@ -59,9 +60,9 @@ responses:
   utter_ask_helpfulness:
   - buttons:
     - payload: /affirm
-      title: "👍"
+      title: 👍
     - payload: /deny
-      title: "👎"
+      title: 👎
     text: Did that help you?
   utter_joy:
   - text: That pleases me!
@@ -96,36 +97,43 @@ responses:
       title: No
     text: Shall we go through the whole exercise together?
   utter_affirm_advanced_help:
-  - text: "Great, let's go through the task together. ⭐"
+  - text: Great, let's go through the task together. ⭐
   utter_continue:
   - buttons:
     - payload: /affirm
       title: Continue
-    text: Continue?  
-  utter_mood_great: 
-  - text: "I'm allright. Thanks. 👌"
-  - text: "I am fine, thanks. 🤟"
-  - text: "I am well, thanks. 👌"
+    text: Continue?
+  utter_mood_great:
+  - text: I'm allright. Thanks. 👌
+  - text: I am fine, thanks. 🤟
+  - text: I am well, thanks. 👌
   utter_how_are_you:
   - text: How are you?
   - text: How are you doing?
   utter_happy:
-  - text: "Great! 💙"
-  - text: "That makes me happy! 💙"
+  - text: Great! 💙
+  - text: That makes me happy! 💙
   utter_cheer_up:
-  - text: "I'm so sorry! You can ask me to tell a joke. 🤖 Maybe this will cheer you up!"  
+  - text: I'm so sorry! You can ask me to tell a joke. 🤖 Maybe this will cheer you
+      up!
   utter_handle_insult:
-  - text: "Hey, don't be so mean! ✌️"
-  - text: "Good vibes only... ✌️"
-  - text: "That's not how we talk to each other here! ✌️"
+  - text: Hey, don't be so mean! ✌️
+  - text: Good vibes only... ✌️
+  - text: That's not how we talk to each other here! ✌️
   utter_joke:
-  - text: "Two bytes meet. The first byte asks: 'Are you ill?' The second byte replies: 'No, just feeling a bit off.' 😆" 
-  - text: "What is a programmer's favourite hangout place? - Foo Bar. 😆"
-  - text: "How many programmers does it take to change a light bulb? - None! It's a hardware problem. 😆"
-  - text: "There are only 10 kinds of people in this world: those who know binary and those who don't. 😆"
-  - text: "Three SQL Databases walked into a NoSQL bar. A little while later they walked out... because they couldn't find a table. 😆"
-  - text: "A programmer goes to the shop to buy some milk. His wife calls and says 'While you're out, get some eggs.' He never returns. 😆"
-  - text: "How can you tell an extroverted programmer? - He looks at YOUR shoes when he's talking. 😆"
+  - text: "Two bytes meet. The first byte asks: 'Are you ill?' The second byte replies:\
+      \ 'No, just feeling a bit off.' \U0001F606"
+  - text: What is a programmer's favourite hangout place? - Foo Bar. 😆
+  - text: How many programmers does it take to change a light bulb? - None! It's a
+      hardware problem. 😆
+  - text: "There are only 10 kinds of people in this world: those who know binary\
+      \ and those who don't. \U0001F606"
+  - text: Three SQL Databases walked into a NoSQL bar. A little while later they walked
+      out... because they couldn't find a table. 😆
+  - text: A programmer goes to the shop to buy some milk. His wife calls and says
+      'While you're out, get some eggs.' He never returns. 😆
+  - text: How can you tell an extroverted programmer? - He looks at YOUR shoes when
+      he's talking. 😆
   utter_e2s2_story_1:
   - buttons:
     - payload: /affirm
@@ -134,10 +142,10 @@ responses:
       title: No
     text: Do you know what a REST-based API is?
   utter_e2s2_story_2:
-  - text: 'We now want to use the APIs of the two enterpise applications **OrangeHRM**
+  - text: We now want to use the APIs of the two enterpise applications **OrangeHRM**
       and **OpenCRX**. For example, we can use it to obtain information such as "Which
       employees with the job of salesperson are there?" or "How many vacuum cleaners
-      could a particular employee sell?" 💸'
+      could a particular employee sell?" 💸
   utter_e2s2_story_3:
   - text: To address the APIs, we need the tool "Postman". Have you downloaded it
       yet?
@@ -149,9 +157,10 @@ responses:
   - text: Okay, with questions about the contents please read my last messages again.
       And make sure you have installed the tool. I'm waiting for your okay to continue.
   utter_e2s2_story_7:
-  - text: "Excellent! First, let's look at the **OrangeHRM** application. **My tip:** Before\
-      \ we look at the API endpoints, let's get familiar with the program first. You\
-      \ can find the application in the university network (or via VPN) here: https://sepp-hrm.inf.h-brs.de"
+  - text: "Excellent! First, let's look at the **OrangeHRM** application. **My tip:**\
+      \ Before we look at the API endpoints, let's get familiar with the program first.\
+      \ You can find the application in the university network (or via VPN) here:\
+      \ https://sepp-hrm.inf.h-brs.de"
   utter_e2s2_story_8:
   - text: Log in there. You can find the login details in the OrangeHRM documentation
       that was provided to you within this course.
@@ -187,7 +196,7 @@ responses:
   utter_e2s2_story_21:
   - text: Ready for our first request?
   utter_e2s2_story_22:
-  - text: "Don't worry, we'll do it together! ❤️"
+  - text: Don't worry, we'll do it together! ❤️
   utter_e2s2_story_23:
   - text: We will now request a list of all employees.
   utter_e2s2_story_24:
@@ -201,7 +210,7 @@ responses:
       GET-HTTP request to the API and add client_id (see above), client_secret (see
       above) and grant_type = client_credentials to the header.
   utter_e2s2_story_27:
-  - text: "Let's move on. ⭐ Please open the tool Postman."
+  - text: Let's move on. ⭐ Please open the tool Postman.
   utter_e2s2_story_28:
   - text: '**Step 1:** Create a new request.'
   utter_e2s2_story_29:
@@ -225,7 +234,7 @@ responses:
   utter_e2s2_story_38:
   - text: Okay, you can either ask me more questions or contact the professor.
   utter_e2s2_story_40:
-  - text: "Great! Let's continue. ⭐"
+  - text: Great! Let's continue. ⭐
   utter_e2s2_story_41:
   - text: We have now received the token. Please copy it so that we can paste it into
       our actual request to get a list of all employees.
@@ -245,12 +254,22 @@ responses:
   utter_e2s2_story_47:
   - text: Did it work now?
   utter_e2s2_story_48:
-  - text: "Perfect! **Congratulations** on your successful query! 🌟"
+  - text: Perfect! **Congratulations** on your successful query! 🌟
   utter_e2s2_story_49:
   - text: Come up with more queries. For example, you could search for a specific
       employee.
   utter_end_conversation:
-  - text: "So I got my job done to help you. I'm going to take a break now! 💤 Have fun with the task! Okay, if you have a question again, **feel free to contact me**. 😃💬"
+  - text: So I got my job done to help you. I'm going to take a break now! 💤 Have
+      fun with the task! Okay, if you have a question again, **feel free to contact
+      me**. 😃💬
+  utter_laugh:
+  - text: 😆😆😆
+  - text: 😆😆😆
+  utter_explain_usage:
+  - text: You can either ask me questions about course items or I can help you with
+      tasks. If you tell me which task you are working on, I can offer you special
+      help for this task. Please choose how I can help you now. If you want to come
+      back to this point later in the conversation, just write "help"! 😊
 actions:
 - utter_noworries
 - utter_greet
@@ -330,3 +349,11 @@ actions:
 - utter_e2s2_story_49
 - utter_e2s2_story_50
 - utter_end_conversation
+- utter_can_not_help
+- utter_joke
+- mood_great
+- how_are_you
+- mood_unhappy
+- insult
+- utter_laugh
+- utter_explain_usage
