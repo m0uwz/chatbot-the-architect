@@ -13,6 +13,7 @@
 - /affirm
 - Yep
 - Thank you, yes
+- yes i received a reply
 
 ## intent:deny
 - no
@@ -186,6 +187,8 @@
 - Can you help me with task [2](exercise_no).[1](subtask_no)
 - I have a question to subtask [2](subtask_no) in exercise [2](exercise_no)
 - can you show me exercise [1](exercise_no)?
+- task [2](exercise_no).[1](subtask_no)
+- exercise [3](exercise_no).[2](subtask_no)
 
 ## intent:thanks
 - Thanks
@@ -215,6 +218,7 @@
 - I am great
 - I'm good
 - Im doing fine
+- im feeling alright
 
 ## intent:mood_unhappy
 - sad
@@ -266,3 +270,5 @@
 ## intent:laugh
 - hahaha
 - :D
+- xD
+- lol
