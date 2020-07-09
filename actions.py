@@ -141,7 +141,8 @@ class FindInPdf(Action):
         found = False
         course_item = tracker.get_slot("course_item")   
 
-        if course_item:                   
+        if course_item:   
+            dispatcher.utter_message("Please give me a moment. I have to check the library ... 📚")                
             # TOCHANGE
             # reader = PyPDF2.PdfFileReader("test.pdf")
             writer = PyPDF2.PdfFileWriter()

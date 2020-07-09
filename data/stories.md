@@ -29,21 +29,21 @@
     - utter_joke
 
 ## story_mood_great
-- how_are_you
+* how_are_you
     - utter_mood_great
     - utter_how_are_you
-- mood_great
+* mood_great
     - utter_happy
 
 ## story_mood_unhappy_1
-- how_are_you
+* how_are_you
     - utter_mood_great
     - utter_how_are_you
-- mood_unhappy
+* mood_unhappy
     - utter_cheer_up
 
 ## story_insult
-- insult
+* insult
     - utter_handle_insult
 
 ## story_general_question_helpful

@@ -474,7 +474,7 @@ list_course_items_chapter_4 = [
         CourseItem(
             id = 57,
             title = 'Express.js',
-            description = '**Express.js** is a package written for Node.js providing a Web framework that allows to implement modern web applications as **REST-based APIs**. You can define routes for **routing** explicitly for managing resources according to the **CRUD** paradigm. *HTTP methods** are given by the **API**.',
+            description = '**Express.js** is a package written for Node.js providing a Web framework that allows to implement modern web applications as **REST-based APIs**. You can define routes for **routing** explicitly for managing resources according to the **CRUD** paradigm. **HTTP methods** are given by the **API**.',
             how_to = None,
             link = None,
             file = 'https://devopedia.org/images/article/157/9305.1551338805.png'),
@@ -810,7 +810,7 @@ session.add_all(
         SubtaskHasCourseItem(
             subtask_id = 3,
             course_item_id = 39,
-            how_to_exercise_specific = "The program you developed last has no API. There are no endpoints through which another (removed) program could reach your program. Now we want to change that via a REST-based API! Take a look at the tutorial by Niclas Polkow, he can explain how to do it. :)"),
+            how_to_exercise_specific = "The program you developed last has no API. There are no endpoints through which another (removed) program could reach your program. Now we want to change that via a REST-based API! Take a look at the [tutorial by Niclas Polkow](https://www.youtube.com/watch?v=t64LxbkHVjw), he can explain how to do it. :)"),
         SubtaskHasCourseItem(
             subtask_id = 3,
             course_item_id = 41,
