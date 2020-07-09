@@ -958,3 +958,10 @@
     - utter_ask_help_type
 * laugh
     - utter_laugh
+
+## New Story
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
