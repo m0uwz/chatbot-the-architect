@@ -2,12 +2,16 @@
 <html>
     <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <title>💬 The Architect</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     </head>
         <body>
-            <h1>Hello World!</h1>
-
+            <div id="content">
+                <img alt="chatbot-background" src="http://diarchitect-chatbot.de:8080/chatbot-background.svg">
+                <h1>The Architect</h1>
+                <h2>Helps you with Integration Architectures.</h2>
+            </div>
             <div id="webchat"/>
             <script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
             // Or you can replace latest with a specific version
@@ -21,30 +25,12 @@
                 title: "The Architect",
                 subtitle: "Here to help you <3",
                 showFullScreenButton: true,
-                docViewer: true,
-				profileAvatar: 'https://support.upwork.com/hc/article_attachments/360040474034/chatbot-data.png',
+                docViewer: false,
+				profileAvatar: 'http://diarchitect-chatbot.de:8080/chatbot-logo.png',
                 params: {
                     storage: "session"
                 }
             })
-            </script>
-<!--
-            <div id="webchat"/>
-            
-            <script src="https://storage.googleapis.com/mrbot-cdn/webchat-latest.js"></script>
-            // Or you can replace latest with a specific version
-            <script>
-            WebChat.default.init({
-                selector: "#webchat",
-                initPayload: "/get_started",
-                customData: {"language": "en"}, // arbitrary custom data. Stay minimal as this will be added to the socket
-                socketUrl: "https:/diarchitect-chatbot.de/",
-                socketPath: "/socket.io/",
-                title: "Chatbot DIArchitect",
-                subtitle: "Helps you with Integration Architectures <3",
-            })
-            </script>
-        -->
-            
+            </script>            
         </body>
 </html>

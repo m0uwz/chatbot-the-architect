@@ -14,10 +14,14 @@ import json
 from difflib import SequenceMatcher
 import psycopg2 
 import random
+import uuid
+from os import listdir, remove
+from os.path import isfile, join, getmtime
+import time
 
 # TOCHANGE
-from database import Database
-# from .database import Database
+# from database import Database
+from .database import Database
 
 
 class FindExerciseNos(Action):
@@ -104,7 +108,8 @@ class SuggestCourseItems(Action):
         db = Database()
         course_items = db.get_course_items_by_subtask(exercise_no, subtask_no)
 
-        k = 3 if len(course_items) > 3 else len(course_items)
+        max_items = 6
+        k = max_items if len(course_items) > max_items else len(course_items)
         random_items = random.sample(course_items, k)
 
         buttons = []
@@ -133,46 +138,48 @@ class FindInPdf(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict]:
 
-        exercise_no = tracker.get_slot("exercise_no")    
-        subtask_no = tracker.get_slot("subtask_no")    
-
-
         found = False
         course_item = tracker.get_slot("course_item")   
 
-        if course_item: 
-            dispatcher.utter_message("I found this slot course item:")
-            dispatcher.utter_message(str(course_item))
-
-                    
+        if course_item:                   
             # TOCHANGE
-            # reader = PyPDF2.PdfFileReader("/app/actions/test.pdf")
-            reader = PyPDF2.PdfFileReader("test.pdf")
-            # writer = PyPDF2.PdfFileWriter()
-            
-            numPages = reader.getNumPages()
+            # reader = PyPDF2.PdfFileReader("test.pdf")
+            writer = PyPDF2.PdfFileWriter()
 
-            for i in range(0, numPages):
-                PageObj = reader.getPage(i)
-                # dispatcher.utter_message("this is page " + str(i)) 
-                pdfText = PageObj.extractText()
-                # print(Text)
-                resSearch = re.search(str(course_item).lower(), pdfText.lower())
-                if resSearch:
-                    # writer.addPage(PageObj)
-                    # with open('/app/actions/outputi.pdf', 'wb') as outfile:
-                        # writer.write(outfile)
-                    found = True
-                    dispatcher.utter_message(pdfText)
+            filename = str(uuid.uuid4())
             
-            #dispatcher.utter_message("Der Aufruf klappt schon mal... :-)")     
-            #dispatcher.utter_message(image="https://i.imgur.com/nGF1K8f.jpg")
-            #dispatcher.utter_message(
-            #        text=(
-            #            f"I did not find any matching issues on our [forum](https://www.adobe.com/support/products/enterprise/knowledgecenter/media/c4611_sample_explain.pdf):\n"
-            #            f"I recommend you post your question there."
-            #        )
-            #    )
+            slides_path = "/files/slides"
+            files = [f for f in listdir(slides_path) if isfile(join(slides_path, f))]
+            for file in files:
+                reader = PyPDF2.PdfFileReader(open(f'{slides_path}/{file}','rb'))
+                numPages = reader.getNumPages()
+                for i in range(0, numPages):
+                    pageObj = reader.getPage(i)
+                    pdfText = pageObj.extractText()
+                    resSearch = re.search(str(course_item).lower(), pdfText.lower())
+                    if resSearch:
+                        writer.addPage(pageObj)
+                        path = f'/files/slide_extracts/{filename}.pdf'
+                        with open(path, 'wb') as outfile:
+                            writer.write(outfile)
+                        found = True
+            
+            # delete old files
+            slide_extracts_path = "/files/slide_extracts"
+            files = [f for f in listdir(slide_extracts_path) if isfile(join(slide_extracts_path, f))]
+            for file in files:
+                print("file:")
+                print(file)
+                last_change_time = getmtime(f'{slide_extracts_path}/{file}')
+                print("last change time:")
+                print(last_change_time)
+                print(time.time())
+                if (time.time() - last_change_time) > 1800: # delete after 30 min
+                    remove(f'{slide_extracts_path}/{file}')
+
+            if found:
+                dispatcher.utter_message(f'I picked out a few [slides](http://diarchitect-chatbot.de:8080/slide_extracts/{filename}.pdf) on the subject for you.')
+                
 
         return [SlotSet("course_item_found", found),
                 SlotSet("course_item", None)]
@@ -192,14 +199,10 @@ class FindInDb(Action):
         exercise_no = tracker.get_slot("exercise_no")    
         subtask_no = tracker.get_slot("subtask_no")    
 
-
         found = False
         course_item = tracker.get_slot("course_item")   
 
         if course_item:
-            dispatcher.utter_message("I found this slot course item:")
-            dispatcher.utter_message(str(course_item))
-
             db = Database()
             course_items = db.get_course_items()
 
@@ -209,7 +212,21 @@ class FindInDb(Action):
                 if similarity >= 0.8:
                     found = True
                     dispatcher.utter_message(item.description)
-
+                    if item.how_to:
+                        dispatcher.utter_message("Let me explain how to use it :)")
+                        dispatcher.utter_message(item.how_to)
+                    if item.file:
+                        dispatcher.utter_message(image=item.file)    
+                        if "diarchitect-chatbot" not in item.file:
+                            dispatcher.utter_message(f'Image source: {item.file}')
+                    if item.link:
+                        dispatcher.utter_message(f'You can find further information [here]({item.link}) 🌐')  
+                    if exercise_no and subtask_no:
+                        how_to_exercise_specific = db.get_how_to_exercise_specific(course_item, exercise_no, subtask_no)   
+                        if how_to_exercise_specific:
+                            dispatcher.utter_message(f'Let me explain how you have to use {course_item} for exercise {exercise_no} subtask {subtask_no}.')
+                            dispatcher.utter_message(how_to_exercise_specific) 
+        
         return [SlotSet("course_item_found", found)]
 
 
@@ -230,9 +247,7 @@ class FillAdvancedHelpSlot(Action):
         advanced_help = False
 
         if str(exercise_no) in ["2"]:
-            print("ich bin 2 ex")
             if str(subtask_no) in ["2"]:
-                print("ich bin 2 sub")
                 advanced_help = True
 
         return [SlotSet("advanced_help", advanced_help)]
