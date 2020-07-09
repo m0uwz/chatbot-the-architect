@@ -35,7 +35,7 @@
 - mood_great
     - utter_happy
 
-## story_mood_unhappy
+## story_mood_unhappy_1
 - how_are_you
     - utter_mood_great
     - utter_how_are_you
@@ -833,3 +833,108 @@
 * affirm
     - utter_joy
     - utter_further_question
+
+## story_exercise_help_not_helpful
+
+* get_started
+    - utter_greet
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"3"}
+    - slot{"exercise_no":"3"}
+    - slot{"exercise_no":"3"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"Node.js"}
+    - slot{"course_item":"Node.js"}
+    - slot{"course_item":"Node.js"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - slot{"exercise_no":"3"}
+    - slot{"subtask_no":"1"}
+    - slot{"course_item":"Node.js"}
+    - find_in_pdf
+    - slot{"course_item_found":true}
+    - slot{"course_item":null}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+
+## story_mood_unhappy_2
+
+* get_started
+    - utter_greet
+    - utter_ask_help_type
+* how_are_you
+    - utter_mood_great
+    - utter_how_are_you
+* mood_unhappy
+    - utter_cheer_up
+* joke
+    - utter_joke
+
+## New Story
+
+* how_are_you
+    - utter_mood_great
+    - utter_how_are_you
+* mood_unhappy
+    - utter_cheer_up
+* ask_course_item{"course_item":"Unit testing"}
+    - slot{"course_item":"Unit testing"}
+    - slot{"course_item":"Unit testing"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - find_in_pdf
+    - slot{"course_item_found":false}
+    - slot{"course_item":null}
+    - utter_can_not_help
+    - utter_send_contact_details
+* ask_course_item{"course_item":"API"}
+    - slot{"course_item":"API"}
+    - slot{"course_item":"API"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - slot{"course_item":"Unit testing"}
+    - slot{"course_item":"API"}
+    - find_in_pdf
+    - slot{"course_item_found":true}
+    - slot{"course_item":null}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+
+## New Story
+
+* ask_course_item{"course_item":"message patterns"}
+    - slot{"course_item":"message patterns"}
+    - slot{"course_item":"message patterns"}
+    - find_in_db
+    - slot{"course_item":"message patterns"}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+
+## New Story
+
+* get_started
+    - utter_greet
+    - utter_ask_help_type
+* insult
+    - utter_handle_insult
