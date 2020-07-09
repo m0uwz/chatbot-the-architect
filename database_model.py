@@ -52,6 +52,7 @@ class Exercise(Base):
     id = Column(Integer, primary_key=True)
     exercise_no = Column(Integer)
     title = Column(String)
+    file = Column(String)          
 
 class Subtask(Base):
     __tablename__ = "subtask"
@@ -675,27 +676,33 @@ session.add_all(
         Exercise(
             id = 1,
             exercise_no = 1,
-            title = 'Public API'), 
+            title = 'Public API',
+            file = 'http://diarchitect-chatbot.de:8080/exercises/exercise_1.pdf'), 
         Exercise(
             id = 2,
             exercise_no = 2,
-            title = 'Migration of application to REST'), 
+            title = 'Migration of application to REST',
+            file = 'http://diarchitect-chatbot.de:8080/exercises/exercise_2.pdf'), 
         Exercise(
             id = 3,
             exercise_no = 3,
-            title = 'Migration of application to Node.js'), 
+            title = 'Migration of application to Node.js',
+            file = 'http://diarchitect-chatbot.de:8080/exercises/exercise_3.pdf'), 
         Exercise(
             id = 4,
             exercise_no = 4,
-            title = 'Integration Testing'), 
+            title = 'Integration Testing',
+            file = 'http://diarchitect-chatbot.de:8080/exercises/exercise_4.pdf'), 
         Exercise(
             id = 5,
             exercise_no = 5,
-            title = 'UI Integration'), 
+            title = 'UI Integration',
+            file = 'http://diarchitect-chatbot.de:8080/exercises/exercise_5.pdf'), 
         Exercise(
             id = 6,
             exercise_no = 6,
-            title = 'Semesterproject')
+            title = 'Semesterproject',
+            file = 'http://diarchitect-chatbot.de:8080/exercises/exercise_6.pdf')
     ]
 )
 

@@ -138,7 +138,7 @@
 - what is [shared database](course_item)?
 - what are [methods calls](course_item)?
 - what is [messaging](course_item)?
-- what is a [monolithic](course_item)[monolithic architecture](course_item)?
+- what is a [monolithic architecture](course_item)?
 - what is [hub and spoke](course_item)?
 - what is [runtime view](course_item)?
 - what is [4 views model](course_item)?
@@ -184,11 +184,11 @@
 - /inform{"exercise_no": "2"}
 - /inform{"subtask_no": "2"}
 - exercise [2](exercise_no) subtask [1](exercise_no)
-- Can you help me with task [2](exercise_no).[1](subtask_no)
+- Can you help me with task [2](exercise_no) . [1](subtask_no)
 - I have a question to subtask [2](subtask_no) in exercise [2](exercise_no)
 - can you show me exercise [1](exercise_no)?
-- task [2](exercise_no).[1](subtask_no)
-- exercise [3](exercise_no).[2](subtask_no)
+- task [2](exercise_no) . [1](subtask_no)
+- exercise [3](exercise_no) . [2](subtask_no)
 - exercise [3](exercise_no)
 
 ## intent:thanks

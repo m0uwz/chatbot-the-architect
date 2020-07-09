@@ -105,7 +105,7 @@ responses:
       title: Continue
     text: Continue?
   utter_mood_great:
-  - text: I'm allright. Thanks. 👌
+  - text: I'm alright. Thanks. 👌
   - text: I am fine, thanks. 🤟
   - text: I am well, thanks. 👌
   utter_how_are_you:

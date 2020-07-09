@@ -66,6 +66,7 @@
 * ask_course_item
     - find_in_db
     - slot{"course_item_found": false}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
@@ -85,12 +86,14 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * deny
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * deny
     - utter_rephrase_question
 * ask_course_item
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
@@ -108,6 +111,7 @@
 * ask_course_item
     - find_in_db
     - slot{"course_item_found": false}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found": false}
     - utter_can_not_help
@@ -318,6 +322,7 @@
 * ask_course_item
     - find_in_db
     - slot{"course_item_found": false}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found": true} 
     - utter_continue
@@ -553,6 +558,7 @@
     - slot{"course_item":"Node.js"}
     - find_in_db
     - slot{"course_item_found":false}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found":true}
     - slot{"course_item":null}
@@ -601,6 +607,7 @@
     - slot{"course_item":"Node.js"}
     - slot{"course_item":"Software architecture"}
     - slot{"course_item":"Node.js"}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found":true}
     - slot{"course_item":null}
@@ -863,6 +870,7 @@
     - slot{"exercise_no":"3"}
     - slot{"subtask_no":"1"}
     - slot{"course_item":"Node.js"}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found":true}
     - slot{"course_item":null}
@@ -898,6 +906,7 @@
     - slot{"course_item_found":true}
     - utter_ask_helpfulness
 * deny
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found":false}
     - slot{"course_item":null}
@@ -912,6 +921,7 @@
 * deny
     - slot{"course_item":"Unit testing"}
     - slot{"course_item":"API"}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found":true}
     - slot{"course_item":null}

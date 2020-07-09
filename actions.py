@@ -71,6 +71,7 @@ class FindSubtaskNos(Action):
         exercise_no = tracker.get_slot("exercise_no")    
 
         db = Database()
+        exercise_file = db.get_file_by_exercise_no(exercise_no)
         subtasks = db.get_subtasks_by_exercise_no(exercise_no)
 
         buttons = []
@@ -82,6 +83,7 @@ class FindSubtaskNos(Action):
                 "payload": payload})
 
         dispatcher.utter_message("Okay, you are working on exercise " + exercise_no + ".")
+        dispatcher.utter_message(f'Here is the [exercise sheet]({exercise_file}).')
         dispatcher.utter_button_message("What subtask can I help you with?", buttons)  
         return []          
 
@@ -142,7 +144,6 @@ class FindInPdf(Action):
         course_item = tracker.get_slot("course_item")   
 
         if course_item:   
-            dispatcher.utter_message("Please give me a moment. I have to check the library ... 📚")                
             # TOCHANGE
             # reader = PyPDF2.PdfFileReader("test.pdf")
             writer = PyPDF2.PdfFileWriter()
@@ -169,12 +170,7 @@ class FindInPdf(Action):
             slide_extracts_path = "/files/slide_extracts"
             files = [f for f in listdir(slide_extracts_path) if isfile(join(slide_extracts_path, f))]
             for file in files:
-                print("file:")
-                print(file)
                 last_change_time = getmtime(f'{slide_extracts_path}/{file}')
-                print("last change time:")
-                print(last_change_time)
-                print(time.time())
                 if (time.time() - last_change_time) > 1800: # delete after 30 min
                     remove(f'{slide_extracts_path}/{file}')
 

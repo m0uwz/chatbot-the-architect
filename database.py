@@ -20,6 +20,14 @@ class Database():
         exercises = session.query(Exercise)
         session.close()
         return exercises
+
+    def get_file_by_exercise_no(self, exercise_no):
+        session = self._open_session()
+        exercise = session.query(Exercise).filter(Exercise.exercise_no == exercise_no).first()
+        file = exercise.file
+        session.close()
+        return file
+        
     
     def get_subtasks_by_exercise_no(self, exercise_no):
         session = self._open_session()
@@ -44,10 +52,11 @@ class Database():
         session = self._open_session()
         exercise = session.query(Exercise).filter(Exercise.exercise_no == exercise_no).first()
         subtask = session.query(Subtask).filter(Subtask.exercise_id == exercise.id).filter(Subtask.subtask_no == subtask_no).first()
-        course_item_relationships = subtask.relationship_course_items
         course_items = []
-        for relationship in course_item_relationships:
-            course_items.append(relationship.course_item)
+        if subtask:
+            course_item_relationships = subtask.relationship_course_items
+            for relationship in course_item_relationships:
+                course_items.append(relationship.course_item)
         session.close()    
         return course_items
 
