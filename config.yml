@@ -2,21 +2,8 @@
 # https://rasa.com/docs/rasa/nlu/components/
 language: en
 pipeline:
-  - name: ConveRTTokenizer
-  - name: ConveRTFeaturizer
-  - name: RegexFeaturizer
-  - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: "char_wb"
-    min_ngram: 1
-    max_ngram: 4
-  - name: DIETClassifier
-    epochs: 100
-  - name: EntitySynonymMapper
-  - name: ResponseSelector
-    epochs: 100  
-#  - name: WhitespaceTokenizer
+#  - name: ConveRTTokenizer
+#  - name: ConveRTFeaturizer
 #  - name: RegexFeaturizer
 #  - name: LexicalSyntacticFeaturizer
 #  - name: CountVectorsFeaturizer
@@ -28,7 +15,20 @@ pipeline:
 #    epochs: 100
 #  - name: EntitySynonymMapper
 #  - name: ResponseSelector
-#    epochs: 100
+#    epochs: 100  
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
