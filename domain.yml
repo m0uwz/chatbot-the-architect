@@ -271,6 +271,8 @@ responses:
       If you tell me which task you are working on, I can offer you special help for
       this task. Please choose how I can help you now. If you want to come back to
       this point later in the conversation, just write "help"! 😊
+  utter_please_wait:
+  - text: Please give me a moment. I have to check the library ... 📚
 actions:
 - utter_noworries
 - utter_greet
@@ -358,3 +360,4 @@ actions:
 - insult
 - utter_laugh
 - utter_explain_usage
+- utter_please_wait
