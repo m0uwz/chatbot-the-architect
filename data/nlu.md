@@ -12,6 +12,7 @@
 - Yes
 - /affirm
 - Yep
+- Thank you, yes
 
 ## intent:deny
 - no
@@ -23,6 +24,7 @@
 - do you have something else
 - no this does not work for me
 - No
+- i don't know
 
 ## intent:out_of_scope
 - please help with my ice cream it's dripping
@@ -57,6 +59,10 @@
 - talk to me
 - who is your favourite robot?
 - can you help me to build a bot
+- How is the weather in bonn
+- How is the weather over there
+- whats the meaning of life?
+- whats the time?
 
 ## intent:goodbye
 - Bye
@@ -160,6 +166,8 @@
 - what is the [multiple service providers pattern](course_item)?
 - what is the [routing message router pattern](course_item)?
 - what is the [aggregator pattern](course_item)??
+- [CRUD](course_item)
+- can you tell me more about [MOM](course_item)?
 
 ## intent:inform
 - [1](exercise_no)
@@ -174,6 +182,10 @@
 - [5](subtask_no)
 - /inform{"exercise_no": "2"}
 - /inform{"subtask_no": "2"}
+- exercise [2](exercise_no) subtask [1](subtask_no)
+- Can you help me with task [2](exercise_no).[1](subtask_no)
+- I have a question to subtask [2](subtask_no) in exercise [2](exercise_no)
+- can you show me exercise [1](exercise_no)?
 
 ## intent:thanks
 - Thanks
@@ -202,6 +214,7 @@
 - I am feeling very good
 - I am great
 - I'm good
+- Im doing fine
 
 ## intent:mood_unhappy
 - sad
@@ -214,12 +227,14 @@
 - not very good
 - extremely sad
 - so sad
+- a little stressed out
 
 ## intent:how_are_you
 - how are you?
 - how are you doing?
 - how are you feeling?
 - what's up?
+- How is your day going?
 
 ## intent:insult
 - idiot
@@ -227,6 +242,7 @@
 - jerk
 - you are stuid
 - you are ugly
+- you suck
 
 ## intent:joke
 - please tell me a joke
@@ -246,3 +262,7 @@
 
 ## intent:get_started
 - get_started
+
+## intent:laugh
+- hahaha
+- :D
