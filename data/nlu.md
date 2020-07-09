@@ -183,12 +183,13 @@
 - [5](subtask_no)
 - /inform{"exercise_no": "2"}
 - /inform{"subtask_no": "2"}
-- exercise [2](exercise_no) subtask [1](subtask_no)
+- exercise [2](exercise_no) subtask [1](exercise_no)
 - Can you help me with task [2](exercise_no).[1](subtask_no)
 - I have a question to subtask [2](subtask_no) in exercise [2](exercise_no)
 - can you show me exercise [1](exercise_no)?
 - task [2](exercise_no).[1](subtask_no)
 - exercise [3](exercise_no).[2](subtask_no)
+- exercise [3](exercise_no)
 
 ## intent:thanks
 - Thanks

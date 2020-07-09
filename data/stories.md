@@ -939,3 +939,12 @@
     - utter_ask_help_type
 * insult
     - utter_handle_insult
+
+## New Story
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* laugh
+    - utter_laugh

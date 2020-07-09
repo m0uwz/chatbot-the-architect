@@ -41,12 +41,13 @@ responses:
   - text: Hey there! 👋
   - text: Hello! 👋
   utter_goodbye:
-  - text: Talk to you later!
-  - text: Have a good day.
-  - text: Until next time!
+  - text: Talk to you later! 😃💬
+  - text: Have a good day. See you! 😃💬
+  - text: Until next time! 😃💬
   utter_noworries:
-  - text: My pleasure.
+  - text: My pleasure. 💙
   - text: You are welcome!
+  - text: You're welcome. 💙
   utter_out_of_scope:
   - text: I can't help you with that. Sorry.
   - text: Sorry, I don't know anything about that.
@@ -264,12 +265,12 @@ responses:
       me**. 😃💬
   utter_laugh:
   - text: 😆😆😆
-  - text: 😆😆😆
   utter_explain_usage:
-  - text: You can either ask me questions about course items or I can help you with
-      tasks. If you tell me which task you are working on, I can offer you special
-      help for this task. Please choose how I can help you now. If you want to come
-      back to this point later in the conversation, just write "help"! 😊
+  - text: I am The Architect and I can help you with your course "Integration Architectures".  🎓
+      You can either ask me questions about course items or I can help you with tasks.
+      If you tell me which task you are working on, I can offer you special help for
+      this task. Please choose how I can help you now. If you want to come back to
+      this point later in the conversation, just write "help"! 😊
 actions:
 - utter_noworries
 - utter_greet
