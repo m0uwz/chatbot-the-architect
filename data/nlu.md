@@ -14,6 +14,7 @@
 - Yep
 - Thank you, yes
 - yes i received a reply
+- I did
 
 ## intent:deny
 - no
