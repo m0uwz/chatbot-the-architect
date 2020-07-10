@@ -965,3 +965,53 @@
     - utter_greet
     - utter_explain_usage
     - utter_ask_help_type
+
+## Story from conversation with 99f4ae853e2843a0a4aa8805184fa1e6 on July 9th 2020
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* general_question
+    - utter_ask_question
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found":false}
+    - utter_please_wait
+    - find_in_pdf
+    - slot{"course_item_found":false}
+    - slot{"course_item":null}
+    - utter_can_not_help
+    - utter_send_contact_details
+* ask_course_item{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+* affirm
+    - utter_ask_question
+* inform{"exercise_no":"3"}
+    - slot{"exercise_no":"3"}
+    - slot{"exercise_no":"3"}
+    - find_subtask_nos
+* ask_course_item{"course_item":"crud"}
+    - slot{"course_item":"crud"}
+    - slot{"course_item":"crud"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - slot{"course_item":"nodejs"}
+    - slot{"exercise_no":"3"}
+    - slot{"course_item":"crud"}
+    - utter_please_wait
+    - find_in_pdf
+    - slot{"course_item_found":true}
+    - slot{"course_item":null}
+    - utter_ask_helpfulness
+* deny
+    - utter_rephrase_question
