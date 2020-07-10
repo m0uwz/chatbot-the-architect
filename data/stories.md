@@ -1072,3 +1072,52 @@
 * ask_course_item
     - utter_can_not_help
     - utter_send_contact_details
+
+## Story from conversation with d680231f589b4310a3d48e9f0d1e839d on July 10th 2020
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"Swagger"}
+    - slot{"course_item":"Swagger"}
+    - slot{"course_item":"Swagger"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* ask_course_item
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"1"}
+    - slot{"course_item":"Swagger"}
+    - utter_rephrase_question
+* ask_course_item
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"1"}
+    - slot{"course_item":"Swagger"}
+    - utter_can_not_help
+    - utter_send_contact_details
+
+## New Story
+
+* ask_course_item{"course_item":"architect"}
+    - slot{"course_item":"architect"}
+    - find_in_db
+    - slot{"course_item_found":false}
+    - utter_please_wait
+    - find_in_pdf
+    - slot{"course_item_found":true}
+    - slot{"course_item":null}
+    - utter_ask_helpfulness
