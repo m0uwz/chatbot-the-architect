@@ -169,6 +169,7 @@
 - what is the [aggregator pattern](course_item)??
 - [CRUD](course_item)
 - can you tell me more about [MOM](course_item)?
+- what is REST?
 
 ## intent:inform
 - [1](exercise_no)

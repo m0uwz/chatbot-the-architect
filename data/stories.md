@@ -527,9 +527,6 @@
 
 ## story_utter_e2s2_help_with_problems_and_questions_2
 
-* get_started
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"2"}
@@ -804,9 +801,6 @@
 
 ## story_exercise_help_second_question
 
-* get_started
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"1"}
@@ -844,9 +838,6 @@
 
 ## story_exercise_help_not_helpful
 
-* get_started
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"3"}
@@ -883,6 +874,7 @@
 
 * get_started
     - utter_greet
+    - utter_explain_usage
     - utter_ask_help_type
 * how_are_you
     - utter_mood_great
@@ -946,6 +938,7 @@
 
 * get_started
     - utter_greet
+    - utter_explain_usage
     - utter_ask_help_type
 * insult
     - utter_handle_insult
@@ -958,13 +951,6 @@
     - utter_ask_help_type
 * laugh
     - utter_laugh
-
-## New Story
-
-* get_started
-    - utter_greet
-    - utter_explain_usage
-    - utter_ask_help_type
 
 ## Story from conversation with 99f4ae853e2843a0a4aa8805184fa1e6 on July 9th 2020
 
@@ -1015,3 +1001,33 @@
     - utter_ask_helpfulness
 * deny
     - utter_rephrase_question
+
+## New Story
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"1"}
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found":false}
+    - find_in_pdf
+    - slot{"course_item_found":false}
+    - slot{"course_item":null}
+    - utter_can_not_help
+    - utter_send_contact_details
