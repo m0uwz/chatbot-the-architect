@@ -91,7 +91,7 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * deny
-    - utter_rephrase_question
+    - utter_ask_rephrase
 * ask_course_item
     - utter_please_wait
     - find_in_pdf
@@ -1000,7 +1000,7 @@
     - slot{"course_item":null}
     - utter_ask_helpfulness
 * deny
-    - utter_rephrase_question
+    - utter_ask_rephrase
 
 ## New Story
 
@@ -1068,7 +1068,7 @@
 ## story_general_question_without_slot
 
 * ask_course_item
-    - utter_rephrase_question
+    - utter_ask_rephrase
 * ask_course_item
     - utter_can_not_help
     - utter_send_contact_details
@@ -1102,7 +1102,7 @@
     - slot{"exercise_no":"2"}
     - slot{"subtask_no":"1"}
     - slot{"course_item":"Swagger"}
-    - utter_rephrase_question
+    - utter_ask_rephrase
 * ask_course_item
     - slot{"exercise_no":"2"}
     - slot{"subtask_no":"1"}

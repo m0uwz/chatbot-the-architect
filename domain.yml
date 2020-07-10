@@ -80,7 +80,7 @@ responses:
   - text: Feel free to ask me a question!
   - text: What question can I help you with?
   - text: How can I help you?
-  utter_rephrase_question:
+  utter_ask_rephrase:
   - text: Could you please rephrase your request? I may not have understood your request
       correctly.
   - text: Can you express your request in other words? Maybe I didn't understand you
@@ -89,7 +89,7 @@ responses:
   - text: Unfortunately I can't help you with that. I'm sorry.
   - text: I don't know anything about that. Unfortunately I can't help you, sorry.
   utter_send_contact_details:
-  - text: 'If you want, you can contact the professor directly by email: sascha.alda@h-brs.de'
+  - text: 'If you want, you can contact the professor directly by email: [sascha.alda@h-brs.de](mailto:sascha.alda@h-brs.de)'
   utter_advanced_help:
   - buttons:
     - payload: /affirm
@@ -290,7 +290,7 @@ actions:
 - utter_joy
 - utter_further_question
 - utter_no_help_needed
-- utter_rephrase_question
+- utter_ask_rephrase
 - utter_send_contact_details
 - utter_advanced_help
 - utter_affirm_advanced_help
