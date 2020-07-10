@@ -527,9 +527,6 @@
 
 ## story_utter_e2s2_help_with_problems_and_questions_2
 
-* get_started
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"2"}
@@ -804,9 +801,6 @@
 
 ## story_exercise_help_second_question
 
-* get_started
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"1"}
@@ -844,9 +838,6 @@
 
 ## story_exercise_help_not_helpful
 
-* get_started
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"3"}
@@ -883,6 +874,7 @@
 
 * get_started
     - utter_greet
+    - utter_explain_usage
     - utter_ask_help_type
 * how_are_you
     - utter_mood_great
@@ -946,6 +938,7 @@
 
 * get_started
     - utter_greet
+    - utter_explain_usage
     - utter_ask_help_type
 * insult
     - utter_handle_insult
@@ -959,9 +952,82 @@
 * laugh
     - utter_laugh
 
+## Story from conversation with 99f4ae853e2843a0a4aa8805184fa1e6 on July 9th 2020
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* general_question
+    - utter_ask_question
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found":false}
+    - utter_please_wait
+    - find_in_pdf
+    - slot{"course_item_found":false}
+    - slot{"course_item":null}
+    - utter_can_not_help
+    - utter_send_contact_details
+* ask_course_item{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+* affirm
+    - utter_ask_question
+* inform{"exercise_no":"3"}
+    - slot{"exercise_no":"3"}
+    - slot{"exercise_no":"3"}
+    - find_subtask_nos
+* ask_course_item{"course_item":"crud"}
+    - slot{"course_item":"crud"}
+    - slot{"course_item":"crud"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - slot{"course_item":"nodejs"}
+    - slot{"exercise_no":"3"}
+    - slot{"course_item":"crud"}
+    - utter_please_wait
+    - find_in_pdf
+    - slot{"course_item_found":true}
+    - slot{"course_item":null}
+    - utter_ask_helpfulness
+* deny
+    - utter_rephrase_question
+
 ## New Story
 
 * get_started
     - utter_greet
     - utter_explain_usage
     - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"1"}
+* ask_course_item
+    - find_in_db
+    - slot{"course_item_found":false}
+    - find_in_pdf
+    - slot{"course_item_found":false}
+    - slot{"course_item":null}
+    - utter_can_not_help
+    - utter_send_contact_details
