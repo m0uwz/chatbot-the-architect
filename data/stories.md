@@ -1031,3 +1031,43 @@
     - slot{"course_item":null}
     - utter_can_not_help
     - utter_send_contact_details
+
+## New Story
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":true}
+    - utter_advanced_help
+* affirm
+    - utter_affirm_advanced_help
+    - utter_e2s2_story_1
+* affirm
+    - utter_e2s2_story_2
+    - utter_e2s2_story_3
+* out_of_scope
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"2"}
+    - utter_out_of_scope
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"2"}
+    - utter_e2s2_story_3
+
+## story_general_question_without_slot
+
+* ask_course_item
+    - utter_rephrase_question
+* ask_course_item
+    - utter_can_not_help
+    - utter_send_contact_details
