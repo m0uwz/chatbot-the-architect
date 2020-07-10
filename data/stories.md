@@ -1026,6 +1026,7 @@
 * ask_course_item
     - find_in_db
     - slot{"course_item_found":false}
+    - utter_please_wait
     - find_in_pdf
     - slot{"course_item_found":false}
     - slot{"course_item":null}
