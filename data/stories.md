@@ -1148,3 +1148,19 @@
     - slot{"course_item_found":true}
     - slot{"course_item":null}
     - utter_ask_helpfulness
+
+## New Story
+
+* ask_course_item
+    - utter_ask_rephrase
+* ask_course_item
+    - utter_can_not_help
+    - utter_send_contact_details
+* ask_course_item{"course_item":"blablu"}
+    - slot{"course_item":"blablu"}
+    - utter_please_wait
+    - find_in_pdf
+    - slot{"course_item_found":false}
+    - slot{"course_item":null}
+    - utter_can_not_help
+    - utter_send_contact_details
