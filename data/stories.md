@@ -1121,3 +1121,83 @@
     - slot{"course_item_found":true}
     - slot{"course_item":null}
     - utter_ask_helpfulness
+
+## New Story
+
+* greet
+    - action_default_ask_affirmation
+* out_of_scope
+    - action_default_ask_rephrase
+* out_of_scope
+    - utter_can_not_help
+    - utter_send_contact_details
+
+## Story from conversation with f023188fa9734f83b606503909e0e1d0 on July 11th 2020
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* general_question
+    - utter_ask_question
+* ask_course_item{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* affirm
+    - utter_joy
+    - utter_further_question
+* inform{"exercise_no":"4"}
+    - slot{"exercise_no":"4"}
+    - slot{"exercise_no":"4"}
+    - find_subtask_nos
+* inform{"subtask_no":"3"}
+    - slot{"subtask_no":"3"}
+    - slot{"subtask_no":"3"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":false}
+    - utter_ask_question
+* ask_course_item
+    - slot{"course_item":"nodejs"}
+    - slot{"exercise_no":"4"}
+    - slot{"subtask_no":"3"}
+    - utter_can_not_help
+    - utter_send_contact_details
+
+## Story from conversation with 227fa69b5f5f4a31b9b325371c5bbc8c on July 11th 2020
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"1"}
+    - slot{"exercise_no":"1"}
+    - slot{"exercise_no":"1"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"UML Package Diagram"}
+    - slot{"course_item":"UML Package Diagram"}
+    - slot{"course_item":"UML Package Diagram"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - slot{"exercise_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"course_item":"UML Package Diagram"}
+    - find_in_pdf
+    - slot{"course_item_found":true}
+    - slot{"course_item":null}
+    - utter_ask_helpfulness

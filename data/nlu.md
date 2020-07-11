@@ -68,6 +68,7 @@
 - whats your name?
 - Tell me about yourself
 - Whats your name?
+- knocki knocki
 
 ## intent:goodbye
 - Bye
@@ -225,6 +226,8 @@
 - I'm good
 - Im doing fine
 - im feeling alright
+- Fine
+- Well
 
 ## intent:mood_unhappy
 - sad
@@ -269,6 +272,7 @@
 - now back to my problem
 - i have a problem
 - now back to my question
+- exercise
 
 ## intent:get_started
 - get_started
