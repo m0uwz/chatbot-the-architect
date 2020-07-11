@@ -667,9 +667,6 @@
 
 ## story_exercise_help_without_advanced_help_and_without_suggestions
 
-* greet
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"2"}
@@ -696,9 +693,6 @@
 
 ## story_utter_e2s2_help_with_problems_and_questions_3
 
-* greet
-    - utter_greet
-    - utter_ask_help_type
 * exercise_help
     - find_exercise_nos
 * inform{"exercise_no":"2"}
@@ -798,43 +792,6 @@
     - utter_send_contact_details
 * thanks
     - utter_noworries
-
-## story_exercise_help_second_question
-
-* exercise_help
-    - find_exercise_nos
-* inform{"exercise_no":"1"}
-    - slot{"exercise_no":"1"}
-    - slot{"exercise_no":"1"}
-    - find_subtask_nos
-* inform{"subtask_no":"2"}
-    - slot{"subtask_no":"2"}
-    - slot{"subtask_no":"2"}
-    - fill_advanced_help_slot
-    - slot{"advanced_help":false}
-    - suggest_course_items
-    - slot{"course_item_found":true}
-* ask_course_item{"course_item":"CRUD"}
-    - slot{"course_item":"CRUD"}
-    - slot{"course_item":"CRUD"}
-    - find_in_db
-    - slot{"course_item_found":true}
-    - utter_ask_helpfulness
-* deny
-    - utter_can_not_help
-    - utter_send_contact_details
-* ask_course_item{"course_item":"MongoDB"}
-    - slot{"course_item":"MongoDB"}
-    - slot{"course_item":"MongoDB"}
-    - find_in_db
-    - slot{"exercise_no":"1"}
-    - slot{"subtask_no":"2"}
-    - slot{"course_item":"CRUD"}
-    - slot{"course_item":"MongoDB"}
-    - utter_ask_helpfulness
-* affirm
-    - utter_joy
-    - utter_further_question
 
 ## story_exercise_help_not_helpful
 
@@ -1121,16 +1078,6 @@
     - slot{"course_item_found":true}
     - slot{"course_item":null}
     - utter_ask_helpfulness
-
-## New Story
-
-* greet
-    - action_default_ask_affirmation
-* out_of_scope
-    - action_default_ask_rephrase
-* out_of_scope
-    - utter_can_not_help
-    - utter_send_contact_details
 
 ## Story from conversation with f023188fa9734f83b606503909e0e1d0 on July 11th 2020
 
