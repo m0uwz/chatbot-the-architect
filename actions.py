@@ -248,3 +248,17 @@ class FillAdvancedHelpSlot(Action):
                 advanced_help = True
 
         return [SlotSet("advanced_help", advanced_help)]
+
+
+class ResetCourseItemSlot(Action):
+    def name(self) -> Text:
+        """Unique identifier of the action"""
+
+        return "reset_course_item_slot"
+
+    def run(self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict]:
+
+        return [SlotSet("course_item", None)]

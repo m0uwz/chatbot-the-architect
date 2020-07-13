@@ -79,7 +79,6 @@ responses:
   utter_ask_question:
   - text: Feel free to ask me a question!
   - text: What question can I help you with?
-  - text: How can I help you?
   utter_ask_rephrase:
   - text: Could you please rephrase your request? I may not have understood your request
       correctly.
@@ -284,6 +283,7 @@ actions:
 - suggest_course_items
 - explain_course_item_for_exercise
 - fill_advanced_help_slot
+- reset_course_item_slot
 - utter_ask_help_type
 - utter_ask_question
 - utter_ask_helpfulness

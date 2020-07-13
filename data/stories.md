@@ -140,8 +140,15 @@
 * affirm
     - utter_joy
     - utter_further_question
+    - suggest_course_items
+* ask_course_item{"course_item":"System design"}
+    - find_in_db
+    - slot{"course_item_found": true}
+    - utter_ask_helpfulness
 * affirm
-    - utter_ask_question
+    - utter_joy
+    - utter_further_question
+    - suggest_course_items
 
 ## story_utter_e2s2_help_happy_path
 * exercise_help
