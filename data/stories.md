@@ -837,6 +837,12 @@
     - utter_joy
     - utter_further_question
 
+## story_rephrase_out_of_scope
+* deny
+    - utter_ask_rephrase
+* out_of_scope
+    - utter_out_of_scope    
+
 ## story_mood_unhappy_2
 
 * get_started
