@@ -60,6 +60,13 @@
 * affirm
     - utter_ask_question
 
+## story_no_nelp_needed
+ * affirm
+    - utter_joy
+    - utter_further_question
+* deny
+    - utter_no_help_needed   
+
 ## story_general_question_course_item_not_found_in_db_but_pdf
 * general_question
     - utter_ask_question
@@ -73,10 +80,6 @@
 * affirm
     - utter_joy
     - utter_further_question
-* deny
-    - utter_no_help_needed
-* goodbye
-    - utter_goodbye
 
 ## story_general_question_not_helpful
 * general_question
