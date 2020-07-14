@@ -21,6 +21,7 @@ intents:
 - how_are_you
 - insult
 - laugh
+- stop
 entities:
 - course_item
 - exercise_no
