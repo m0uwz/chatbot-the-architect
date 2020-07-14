@@ -106,7 +106,7 @@ responses:
       title: Continue
     text: Continue?
   utter_restart:
-  - text: You have restarted me successfully... 🤖
+  - text: You have restarted me successfully... 🤖 Write "**help**" to start again!
   utter_mood_great:
   - text: I'm alright. Thanks. 👌
   - text: I am fine, thanks. 🤟
