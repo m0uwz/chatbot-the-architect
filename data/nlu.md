@@ -15,6 +15,7 @@
 - Thank you, yes
 - yes i received a reply
 - I did
+- im ready
 
 ## intent:deny
 - no
@@ -228,6 +229,7 @@
 - im feeling alright
 - Fine
 - Well
+- me 2 <3
 
 ## intent:mood_unhappy
 - sad
