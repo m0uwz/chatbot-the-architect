@@ -1192,11 +1192,10 @@
 ## story_stop
 * stop
     - utter_restart
-	- action_restart
-    - utter_restart
 	- utter_greet
     - utter_explain_usage
     - utter_ask_help_type
+    - action_restart
 
 ## New Story
 
