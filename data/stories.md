@@ -725,8 +725,6 @@
     - utter_e2s2_story_4
     - utter_e2s2_story_5
 * affirm
-    - utter_e2s2_story_6
-* affirm
     - utter_e2s2_story_7
     - utter_e2s2_story_8
     - utter_e2s2_story_9
@@ -770,15 +768,9 @@
 * deny
     - utter_e2s2_story_35
 * deny
-    - slot{"exercise_no":"2"}
-    - slot{"subtask_no":"2"}
     - utter_send_contact_details
-    - slot{"exercise_no":"2"}
-    - slot{"subtask_no":"2"}
     - utter_e2s2_story_36
 * deny
-    - slot{"exercise_no":"2"}
-    - slot{"subtask_no":"2"}
     - utter_e2s2_story_40
     - utter_e2s2_story_41
     - utter_e2s2_story_42
@@ -787,17 +779,11 @@
 * deny
     - utter_e2s2_story_45
 * affirm
-    - slot{"exercise_no":"2"}
-    - slot{"subtask_no":"2"}
     - utter_e2s2_story_47
 * deny
-    - slot{"exercise_no":"2"}
-    - slot{"subtask_no":"2"}
     - utter_e2s2_story_46
     - utter_e2s2_story_47
 * deny
-    - slot{"exercise_no":"2"}
-    - slot{"subtask_no":"2"}
     - utter_out_of_scope
     - utter_send_contact_details
 * thanks
