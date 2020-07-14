@@ -841,7 +841,8 @@
 * deny
     - utter_ask_rephrase
 * out_of_scope
-    - utter_out_of_scope    
+    - utter_out_of_scope
+    - utter_send_contact_details    
 
 ## story_mood_unhappy_2
 

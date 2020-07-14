@@ -250,6 +250,15 @@ class FillAdvancedHelpSlot(Action):
         return [SlotSet("advanced_help", advanced_help)]
 
 
+class ActionOutOfScope(Action):
+    def name(self):
+        """Unique identifier of the action"""
+        return "action_out_of_scope"
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_template(template="utter_out_of_scope")
+        return [UserUtteranceReverted()]
+
 class ResetCourseItemSlot(Action):
     def name(self) -> Text:
         """Unique identifier of the action"""

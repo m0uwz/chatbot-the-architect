@@ -11,6 +11,7 @@ intents:
 - inform
 - thanks
 - out_of_scope
+    triggers: action_out_of_scope
 - ask_course_item
 - general_question
 - exercise_help
@@ -282,6 +283,7 @@ actions:
 - find_subtask_nos
 - suggest_course_items
 - explain_course_item_for_exercise
+- action_out_of_scope
 - fill_advanced_help_slot
 - reset_course_item_slot
 - utter_ask_help_type
