@@ -10,7 +10,7 @@ intents:
 - mood_unhappy
 - inform
 - thanks
-- out_of_scope
+- out_of_scope:
     triggers: action_out_of_scope
 - ask_course_item
 - general_question
