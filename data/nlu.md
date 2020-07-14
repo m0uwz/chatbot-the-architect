@@ -282,3 +282,7 @@
 - :D
 - xD
 - lol
+
+## intent:stop
+- stop
+- restart

@@ -65,7 +65,7 @@
     - utter_joy
     - utter_further_question
 * deny
-    - utter_no_help_needed   
+    - utter_no_help_needed
 
 ## story_general_question_course_item_not_found_in_db_but_pdf
 * general_question
@@ -214,7 +214,6 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
-    - action_restart
 
 ## story_utter_e2s2_help_with_problems
 * exercise_help
@@ -310,7 +309,6 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
-    - action_restart
 
 ## story_utter_e2s2_help_with_problems_and_questions_1
 * exercise_help
@@ -513,7 +511,6 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
-    - action_restart
 
 ## story_exercise_help_without_suggestions
 * exercise_help
@@ -677,7 +674,6 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
-    - action_restart
 
 ## story_exercise_help_without_advanced_help_and_without_suggestions
 
@@ -806,7 +802,6 @@
     - utter_send_contact_details
 * thanks
     - utter_noworries
-    - action_restart
 
 ## story_exercise_help_not_helpful
 
@@ -847,7 +842,6 @@
     - utter_ask_rephrase
 * out_of_scope
     - utter_out_of_scope
-    - utter_send_contact_details    
 
 ## story_mood_unhappy_2
 
@@ -1189,3 +1183,10 @@
     - slot{"course_item":null}
     - utter_can_not_help
     - utter_send_contact_details
+
+## story_stop
+* stop
+	- action_restart
+	- utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
