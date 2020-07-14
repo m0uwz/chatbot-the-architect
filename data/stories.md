@@ -186,10 +186,6 @@
     - utter_e2s2_story_13
     - utter_e2s2_story_14
 * affirm    
-    - utter_e2s2_story_15
-    - utter_e2s2_story_16
-    - utter_continue
-* affirm    
     - utter_e2s2_story_17
     - utter_e2s2_story_18
 * affirm    
@@ -635,16 +631,6 @@
     - slot{"course_item":"Node.js"}
     - utter_e2s2_story_14
 * affirm
-    - slot{"exercise_no":"2"}
-    - slot{"subtask_no":"2"}
-    - slot{"course_item":"REST-based API"}
-    - slot{"course_item":"Node.js"}
-    - slot{"course_item":"Software architecture"}
-    - slot{"course_item":"Node.js"}
-    - utter_e2s2_story_15
-    - utter_e2s2_story_16
-    - utter_continue
-* affirm
     - utter_e2s2_story_17
     - utter_e2s2_story_18
 * affirm
@@ -769,10 +755,6 @@
     - utter_e2s2_story_12
     - utter_e2s2_story_13
     - utter_e2s2_story_14
-* affirm
-    - utter_e2s2_story_15
-    - utter_e2s2_story_16
-    - utter_continue
 * affirm
     - utter_e2s2_story_17
     - utter_e2s2_story_18
