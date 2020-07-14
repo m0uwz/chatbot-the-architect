@@ -263,11 +263,11 @@ class ResetCourseItemSlot(Action):
     def name(self) -> Text:
         """Unique identifier of the action"""
 
-        return "reset_course_item_slot"
+        return "reset_course_item_slots"
 
     def run(self,
             dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict]:
 
-        return [SlotSet("course_item", None)]
+        return [SlotSet("course_item", None), SlotSet("course_item_found", False)]

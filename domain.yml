@@ -273,7 +273,7 @@ responses:
       You can either ask me questions about course items or I can help you with tasks.
       If you tell me which task you are working on, I can offer you special help for
       this task. Please choose how I can help you now. If you want to come back to
-      this point later in the conversation, just write "help"! 😊
+      this point later in the conversation, just write "**help**"! 😊
   utter_please_wait:
   - text: Please give me a moment. I have to check the library ... 📚
 actions:
@@ -288,7 +288,7 @@ actions:
 - explain_course_item_for_exercise
 - action_out_of_scope
 - fill_advanced_help_slot
-- reset_course_item_slot
+- reset_course_item_slots
 - utter_ask_help_type
 - utter_ask_question
 - utter_ask_helpfulness
