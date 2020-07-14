@@ -214,6 +214,7 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
+    - action_restart
 
 ## story_utter_e2s2_help_with_problems
 * exercise_help
@@ -309,6 +310,7 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
+    - action_restart
 
 ## story_utter_e2s2_help_with_problems_and_questions_1
 * exercise_help
@@ -511,6 +513,7 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
+    - action_restart
 
 ## story_exercise_help_without_suggestions
 * exercise_help
@@ -674,6 +677,7 @@
     - utter_e2s2_story_48
     - utter_e2s2_story_49
     - utter_end_conversation
+    - action_restart
 
 ## story_exercise_help_without_advanced_help_and_without_suggestions
 
@@ -802,6 +806,7 @@
     - utter_send_contact_details
 * thanks
     - utter_noworries
+    - action_restart
 
 ## story_exercise_help_not_helpful
 
