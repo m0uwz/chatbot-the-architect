@@ -1215,3 +1215,222 @@
 	- utter_greet
     - utter_explain_usage
     - utter_ask_help_type
+
+## New Story
+
+* need_help
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"1"}
+    - slot{"exercise_no":"1"}
+    - slot{"exercise_no":"1"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"UML Package Diagram"}
+    - slot{"course_item":"UML Package Diagram"}
+    - slot{"course_item":"UML Package Diagram"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* affirm
+    - reset_course_item_slot
+    - utter_joy
+    - utter_further_question
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* deny
+    - slot{"exercise_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"course_item":"UML Package Diagram"}
+    - utter_no_help_needed
+
+## New Story
+
+* get_started
+    - utter_greet
+    - utter_explain_usage
+    - utter_ask_help_type
+* general_question
+    - utter_ask_question
+* ask_course_item{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - slot{"course_item":"nodejs"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* affirm
+    - reset_course_item_slot
+    - utter_joy
+    - utter_further_question
+* need_help
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":true}
+    - utter_advanced_help
+* deny
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"REST-based API"}
+    - slot{"course_item":"REST-based API"}
+    - slot{"course_item":"REST-based API"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* affirm
+    - reset_course_item_slot
+    - utter_joy
+    - utter_further_question
+* need_help
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":true}
+    - utter_advanced_help
+* affirm
+    - utter_affirm_advanced_help
+    - utter_e2s2_story_1
+* affirm
+    - utter_e2s2_story_2
+    - utter_e2s2_story_3
+* deny
+    - utter_e2s2_story_4
+    - utter_e2s2_story_5
+* affirm
+    - utter_e2s2_story_7
+    - utter_e2s2_story_8
+    - utter_e2s2_story_9
+* affirm
+    - utter_e2s2_story_11
+    - utter_e2s2_story_12
+    - utter_e2s2_story_13
+    - utter_e2s2_story_14
+* affirm
+    - utter_e2s2_story_15
+    - utter_e2s2_story_16
+    - utter_continue
+* affirm
+    - utter_e2s2_story_17
+    - utter_e2s2_story_18
+* deny
+    - utter_e2s2_story_19
+    - utter_e2s2_story_20
+    - utter_e2s2_story_21
+* affirm
+    - utter_e2s2_story_23
+    - utter_e2s2_story_24
+    - utter_e2s2_story_25
+    - utter_e2s2_story_26
+    - utter_e2s2_story_27
+    - utter_continue
+* affirm
+    - utter_e2s2_story_28
+    - utter_e2s2_story_29
+    - utter_e2s2_story_30
+    - utter_e2s2_story_31
+    - utter_e2s2_story_32
+    - utter_e2s2_story_33
+    - utter_e2s2_story_34
+* affirm
+    - utter_e2s2_story_40
+    - utter_e2s2_story_41
+    - utter_e2s2_story_42
+    - utter_e2s2_story_43
+    - utter_e2s2_story_44
+* affirm
+    - utter_e2s2_story_48
+    - utter_e2s2_story_49
+    - utter_end_conversation
+* thanks
+    - utter_noworries
+* out_of_scope
+    - action_out_of_scope
+* out_of_scope
+    - action_out_of_scope
+* out_of_scope
+    - action_out_of_scope
+* need_help
+    - utter_ask_help_type
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"1"}
+    - slot{"subtask_no":"1"}
+    - slot{"course_item":"nodejs"}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"course_item":"REST-based API"}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"1"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":false}
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"Postman"}
+    - slot{"course_item":"Postman"}
+    - slot{"course_item":"Postman"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* affirm
+    - reset_course_item_slot
+    - utter_joy
+    - utter_further_question
+    - suggest_course_items
+    - slot{"course_item_found":true}
+* ask_course_item{"course_item":"CRUD"}
+    - slot{"course_item":"CRUD"}
+    - slot{"course_item":"CRUD"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+* deny
+    - utter_please_wait
+    - find_in_pdf
+    - slot{"course_item_found":true}
+    - slot{"course_item":null}
+    - utter_ask_helpfulness
+* affirm
+    - reset_course_item_slot
+    - utter_joy
+    - utter_further_question
+    - slot{"course_item":"nodejs"}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"course_item":"REST-based API"}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"1"}
+    - slot{"course_item":"Postman"}
+    - slot{"course_item":"CRUD"}
+    - suggest_course_items
+    - slot{"course_item_found":true}
