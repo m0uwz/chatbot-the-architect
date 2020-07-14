@@ -23,7 +23,7 @@
 
 ## story_out_of_scope
 * out_of_scope
-    - utter_out_of_scope
+    - action_out_of_scope
 
 ## story_joke
 * joke
@@ -784,7 +784,7 @@
     - utter_e2s2_story_46
     - utter_e2s2_story_47
 * deny
-    - utter_out_of_scope
+    - action_out_of_scope
     - utter_send_contact_details
 * thanks
     - utter_noworries
@@ -827,7 +827,7 @@
 * deny
     - utter_ask_rephrase
 * out_of_scope
-    - utter_out_of_scope
+    - action_out_of_scope
 
 ## story_mood_unhappy_2
 
@@ -1019,7 +1019,7 @@
 * out_of_scope
     - slot{"exercise_no":"2"}
     - slot{"subtask_no":"2"}
-    - utter_out_of_scope
+    - action_out_of_scope
     - slot{"exercise_no":"2"}
     - slot{"subtask_no":"2"}
     - utter_e2s2_story_3

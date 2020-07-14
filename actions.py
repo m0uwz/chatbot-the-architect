@@ -5,7 +5,7 @@ from typing import Dict, Text, Any, List
 
 import requests
 from rasa_sdk import Action
-from rasa_sdk.events import SlotSet, FollowupAction
+from rasa_sdk.events import SlotSet, FollowupAction, UserUtteranceReverted
 from rasa_sdk.forms import FormAction
 
 import PyPDF2
