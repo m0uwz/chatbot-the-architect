@@ -55,7 +55,7 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 * affirm
@@ -79,7 +79,7 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 
@@ -103,7 +103,7 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * deny
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_can_not_help
     - utter_send_contact_details
 * thanks
@@ -144,7 +144,7 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
     - suggest_course_items
@@ -153,7 +153,7 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
     - suggest_course_items
@@ -536,7 +536,7 @@
     - slot{"course_item_found": true}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 * affirm
@@ -852,7 +852,7 @@
     - slot{"course_item":null}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 
@@ -911,7 +911,7 @@
     - slot{"course_item":null}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 
@@ -924,7 +924,7 @@
     - slot{"course_item":"message patterns"}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 
@@ -970,7 +970,7 @@
     - slot{"course_item_found":true}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 * affirm
@@ -1132,7 +1132,7 @@
     - slot{"course_item_found":true}
     - utter_ask_helpfulness
 * affirm
-    - reset_course_item_slots
+    - reset_course_item_slot
     - utter_joy
     - utter_further_question
 * inform{"exercise_no":"4"}
