@@ -259,6 +259,7 @@ class ActionOutOfScope(Action):
         dispatcher.utter_template(template="utter_out_of_scope")
         return [UserUtteranceReverted()]
 
+
 class ResetCourseItemSlot(Action):
     def name(self) -> Text:
         """Unique identifier of the action"""
@@ -270,4 +271,4 @@ class ResetCourseItemSlot(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict]:
 
-        return [SlotSet("course_item", None), SlotSet("course_item_found", False)]
+        return [SlotSet("course_item", 0), SlotSet("course_item_found", False)]

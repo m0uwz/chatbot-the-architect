@@ -157,6 +157,7 @@
     - utter_joy
     - utter_further_question
     - suggest_course_items
+* ask_course_item{"course_item":"System design"}
 
 ## story_utter_e2s2_help_happy_path
 * exercise_help
@@ -701,6 +702,31 @@
     - suggest_course_items
     - slot{"course_item_found":false}
     - utter_ask_question
+* ask_course_item{"course_item":"Software architecture"}
+    - slot{"course_item":"Software architecture"}
+    - find_in_db
+    - slot{"course_item_found":true}
+    - utter_ask_helpfulness
+
+## story_exercise_help_without_advanced_help_and_with_suggestions
+
+* exercise_help
+    - find_exercise_nos
+* inform{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - slot{"exercise_no":"2"}
+    - find_subtask_nos
+* inform{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - slot{"subtask_no":"2"}
+    - fill_advanced_help_slot
+    - slot{"advanced_help":true}
+    - utter_advanced_help
+* deny
+    - slot{"exercise_no":"2"}
+    - slot{"subtask_no":"2"}
+    - suggest_course_items
+    - slot{"course_item_found":true}
 * ask_course_item{"course_item":"Software architecture"}
     - slot{"course_item":"Software architecture"}
     - find_in_db
