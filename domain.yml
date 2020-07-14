@@ -105,6 +105,8 @@ responses:
     - payload: /affirm
       title: Continue
     text: Continue?
+  utter_restart:
+  - text: You have restarted me successfully... 🤖
   utter_mood_great:
   - text: I'm alright. Thanks. 👌
   - text: I am fine, thanks. 🤟
@@ -357,10 +359,7 @@ actions:
 - utter_end_conversation
 - utter_can_not_help
 - utter_joke
-- mood_great
-- how_are_you
-- mood_unhappy
-- insult
 - utter_laugh
 - utter_explain_usage
 - utter_please_wait
+- utter_restart
