@@ -500,7 +500,7 @@ list_course_items_chapter_4 = [
             how_to = None,
             link = None,
             file = 'https://www.anblicks.com/wp-content/uploads/2018/09/MEANSTACK-concept.png')
-]
+    ]
 list_course_items_chapter_5 = [
         CourseItem(
             id = 61,
@@ -554,79 +554,169 @@ list_course_items_chapter_5 = [
         CourseItem(
             id = 68,
             title = 'Request Reply Pattern',
-            description = 'TODO',
+            description = 'The **Request Reply Pattern** is a **Message pattern**. If the Service Consumer expects an immediate reply from a provider, you can use the Request Reply Patterb. It is similar to **Remote Procedure Calls**, but uses two asynchronous point-to-point channels. Each channel is unidirectional.',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/request-reply-pattern.png'),
         CourseItem(
             id = 69,
             title = 'Return Address Pattern',
-            description = 'TODO',
+            description = 'The **Return Address Pattern** is a **Message pattern**.  In some scenario, consumer of request and reply are different. Here the Consumer can specify a Return Address. The Service Provider sends the reply message to this specified channel.',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/return-address-pattern.png'),
         CourseItem(
             id = 70,
             title = 'Multiple Service Providers Pattern',
-            description = 'TODO',
+            description = 'The **Multiple Service Providers Pattern** is a **Message pattern**. Maybe the Provider shows up a bad response behavior and is potentially unreliable. The solution is that the Request Message is forwarded to more than one service providers.',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/multiple-service-providers-pattern.png'),
         CourseItem(
             id = 71,
             title = 'Multiple Service Providers with Correlation IDs Pattern',
-            description = 'TODO',
+            description = 'The **Multiple Service Providers with Correlation IDs Pattern** is a **Message pattern**. In case when multiple messages come in, the consumer might not be able to correlate a reply to an internal process being responsible to handle the same. The solution is to equip each message with an unique identifier. The provider copies the ID to the reply message. The sender can match request and response.',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/multiple-service-providers-with-correlation-ids-pattern.png'),
         CourseItem(
             id = 72,
             title = 'Routing Message Router Pattern',
-            description = 'TODO',
+            description = 'The **Routing Message Router Pattern** is a **Message pattern**. If you want to decouple individual processing steps so that messages can be passed to different components depending on some conditions (e.g. test vs. production environment), you can use this pattern. Use a Message Router to route the messages from one channel to a different channel.',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/routing-message-router-pattern.png'),
         CourseItem(
             id = 73,
             title = 'Message Translator Pattern',
-            description = 'TODO',
+            description = 'The **Message Translator Pattern** is a **Message pattern**. In many cases, enterprise integration solutions route messages between existing applications such as legacy systems. Each of these applications is usually built around a proprietary data model. Each application may have a slightly different notion e.g., of a Customer entity , the attributes that define a Customer and which other entities a Customer is related to. This patterns converts the data models (also known as Adapter Pattern).',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/message-translator-pattern.png'),
         CourseItem(
             id = 74,
             title = 'Content Enricher Pattern',
-            description = 'TODO',
+            description = 'The **Content Enricher Pattern** is a **Message pattern**. In many cases, data must be enriched with further data, so that is fits to the target system. Example: Adding a ZIP-Code to an address. The solution is to define a content enricher.',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/content-enricher-pattern.png'),
         CourseItem(
             id = 75,
             title = 'Content Filter Pattern',
-            description = 'TODO',
+            description = 'The ***Content Filter Pattern* is a **Message pattern**. In many cases, the data of an entity is too much, the target system is only interested in a subset of the corresponding data. The solution is to define a content filter that implements a classical data projection.',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/content-filter-pattern.png'),
         CourseItem(
             id = 76,
             title = 'Splitter Pattern',
-            description = 'TODO',
+            description = 'The **Splitter Pattern** is a **Message pattern**. If you want to process a message which contains multiple elements and each of it has to be processed in a different way, you can define a splitter (before a router).',
             how_to = None,
             link = None,
-            file = None),
+            file = 'http://diarchitect-chatbot.de:8080/course_items/splitter-pattern.png'),
         CourseItem(
             id = 77,
             title = 'Aggregator Pattern',
-            description = 'TODO',
+            description = 'The **Aggregator Pattern** is a **Message pattern**. How to combine the results of individual, but related messages back into a single message? You can use this pattern and define an aggregator.',
             how_to = None,
             link = None,
+            file = 'http://diarchitect-chatbot.de:8080/course_items/aggregator-pattern.png')
+    ]
+list_course_items_chapter_6 = [
+        CourseItem(
+            id = 78,
+            title = 'Integration testing',
+            description = '**Integration Testing**: The integration of software is often a team-based work: subsystems are implemented independently and are subject of integration towards the end of a project. Conceptual errors might occur on interfaces. So integration testing is necessary in order to test coherent parts of the system. A definition: Testing in which software components, hardware components, or both are combined and tested to evaluate the interaction between them.',
+            how_to = None,
+            link = None,
+            file = None),   
+        CourseItem(
+            id = 79,
+            title = 'Test Driver',
+            description = 'A **Test Driver** is part of **Integration Testing**. During Integration testing some dependent subsystems are not available. The Test Driver simulates the part of the software, which calls the (partial) system under test (e.g. an UI). The other part is been managed by a **Test Double**.',
+            how_to = None,
+            link = None,
+            file = None),   
+        CourseItem(
+            id = 80,
+            title = 'Test Double',
+            description = 'A **Test Driver** is part of **Integration Testing**. During Integration testing some dependent subsystems are not available. The Test Driver simulates that part of a software, that is called by the (partial) System under Test. (e.g. a Database, or Legacy System). The other part is been managed by a **Test Driver**. There are different types of Test Doubles: **Fake Object**, **Stub Object**, **Spy Object** and **Mock Object**.',
+            how_to = None,
+            link = None,
+            file = None),   
+        CourseItem(
+            id = 81,
+            title = 'Fake Object',
+            description = 'A **Fake Object** is a **Test Double** and has working implementations, but these are usually simplified. For example, they use an in memory database and not a real database.',
+            how_to = None,
+            link = None,
+            file = None),   
+        CourseItem(
+            id = 82,
+            title = 'Stub Object',
+            description = 'A **Stub Object** is a **Test Double** and is a partial implementation for an interface or class with the purpose of using an instance of this stub class during testing. Stubs usually do not respond to anything outside what is programmed in for the test. Stubs are used for status testing.',
+            how_to = None,
+            link = None,
+            file = None),  
+        CourseItem(
+            id = 83,
+            title = 'Spy Object',
+            description = 'A **Spy Object** is a **Stub Object** and a **Test Double**. Spies are stubs that also record some information based on how they were called. One form of this might be an email service that records how many messages it was sent.',
+            how_to = None,
+            link = None,
+            file = None),   
+        CourseItem(
+            id = 84,
+            title = 'Mock Object',
+            description = 'A **Mock Object** is a **Test Double** and it is a dummy implementation for an interface or a class in which you define the output of certain method calls. Mock objects are configured to perform a certain behavior during a test. They typically record the interaction with the system and tests can validate that. Hence, mocks can be used for behavior testing.',
+            how_to = None,
+            link = None,
+            file = None),   
+        CourseItem(
+            id = 85,
+            title = 'Test Harness',
+            description = 'A **Test Harness** is part of **Integration Testing**. The test harness is responsible for configuring, for starting and stopping a service. Potentially, a test harness must insert and delete test data',
+            how_to = None,
+            link = None,
+            file = None),   
+        CourseItem(
+            id = 86,
+            title = 'Mockito',
+            description = '**Mockito** is a Java-based mocking framework that allows produce **mock objects** for an isolated test run of a test class that implements **Unit testing** or **Integration testing**.',
+            how_to = None,
+            link = 'https://site.mockito.org/',
+            file = 'http://diarchitect-chatbot.de:8080/course_items/mockito.png'),   
+        CourseItem(
+            id = 87,
+            title = 'Sinon.js',
+            description = 'The **Sinon.js** framework is the equivalent counterpart of **Mockito** for the **Node.js** platform, so it is for **Integration testing**.',
+            how_to = 'https://sinonjs.org/',
+            link = None,
+            file = 'http://diarchitect-chatbot.de:8080/course_items/sinonjs.png'),  
+        CourseItem(
+            id = 88,
+            title = 'Angular',
+            description = '**Angular** is a platform and framework for building client applications in HTML and in the programming language TypeScript. It makes use of well-known and well-proven design patterns from Software Engineering (e.g., Dependency Injection, Reactive Programming, Observer Pattern).',
+            how_to = None,
+            link = 'https://angular.io/',
             file = None)
+    ]
+list_course_items_chapter_7 = [
+        CourseItem(
+            id = 89,
+            title = 'Apache Kafka',
+            description = '**Apache Kafka** is a distributed streaming platform that allows processing streams of data. Owing to its message-based nature, Kafka can regarded as a decentralized **messageoriented middleware (MOM)**, too. Apache Kafka supports a loosely coupled integration of subsystems. Kafka stores messages persistently and keeps track about consumer activities on the messages. So, consumers are not exclusively in charge for keeping a history locally.',
+            how_to = None,
+            link = None,
+            file = 'http://diarchitect-chatbot.de:8080/course_items/kafka.png'),   
     ]
 
 session.add_all(list_course_items_chapter_2)
 session.add_all(list_course_items_chapter_3)
 session.add_all(list_course_items_chapter_4)
 session.add_all(list_course_items_chapter_5)
+session.add_all(list_course_items_chapter_6)
+session.add_all(list_course_items_chapter_7)
 
 
 # Add lectures
@@ -893,7 +983,23 @@ session.add_all(
         SubtaskHasCourseItem(
             subtask_id = 10,
             course_item_id = 67,
-            how_to_exercise_specific = "This gives you a long list of patterns! Ask me about the individual patterns and I'll tell you more about them."),       
+            how_to_exercise_specific = "This gives you a long list of patterns! Ask me about the individual patterns and I'll tell you more about them."),    
+        SubtaskHasCourseItem(
+            subtask_id = 11,
+            course_item_id = 78,
+            how_to_exercise_specific = "Imagine the API to OrangeHRM cannot be reached. But you still want to do a test. To do this, you now need a **Mock Object**."), 
+         SubtaskHasCourseItem(
+            subtask_id = 11,
+            course_item_id = 87,
+            how_to_exercise_specific = "Check out the documentary!"),
+        SubtaskHasCourseItem(
+            subtask_id = 12,
+            course_item_id = 88,
+            how_to_exercise_specific = "Angular is very complex. The best thing to do now is to follow a tutorial! You can find it at the link above."),
+        SubtaskHasCourseItem(
+            subtask_id = 13,
+            course_item_id = 60,
+            how_to_exercise_specific = "Excellent! You have reached the end of the course. Check all requirements in the exercise sheet again. Did you implement everything? Just ask me questions if you haven't understood something yet.")                 
     ]
 )
 
