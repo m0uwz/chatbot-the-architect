@@ -118,7 +118,6 @@ class SuggestCourseItems(Action):
         for item in random_items:
             found = True
             payload = "/ask_course_item{\"course_item\": \"" + item.title + "\"}"
-            #payload = "/inform{\"subtask_no\": \"" + subtask_no + "\"}"
             buttons.append(
                 {"title": "{}".format(item.title),
                 "payload": payload})
